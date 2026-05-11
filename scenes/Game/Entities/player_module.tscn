@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://calalwud0205g"]
+
+[ext_resource type="Script" uid="uid://b6mwl4d2vgyxp" path="res://scripts/Game/Entities/Character/player_module.gd" id="1_v6wre"]
+[ext_resource type="Script" uid="uid://buig5yjiwsaiy" path="res://scripts/Game/Entities/Character/movement_module.gd" id="2_605hw"]
+[ext_resource type="Script" uid="uid://c5vqkq5gad78e" path="res://scripts/Game/Entities/Character/height_module.gd" id="3_ugvhi"]
+[ext_resource type="Script" uid="uid://8dvmgdhmovjw" path="res://scripts/Game/Player/input_module.gd" id="4_xw8xn"]
+[ext_resource type="Script" uid="uid://cp8p2ixqhldlj" path="res://scripts/Game/Entities/Character/status_module.gd" id="5_77tjn"]
+[ext_resource type="Script" uid="uid://bko02gl3dtcuq" path="res://scripts/Game/Entities/Character/stats_module.gd" id="6_bhndq"]
+[ext_resource type="Script" uid="uid://ccous1xf0ya2n" path="res://scripts/Game/Entities/Character/damage_module.gd" id="7_expb2"]
+[ext_resource type="Script" uid="uid://b3t5n7l6qx052" path="res://scripts/Game/Player/anim_module.gd" id="8_41bko"]
+
+[node name="PlayerModule" type="Node" unique_id=1088861868]
+script = ExtResource("1_v6wre")
+
+[node name="MovementModule" type="Node" parent="." unique_id=1463997396]
+script = ExtResource("2_605hw")
+
+[node name="HeightModule" type="Node" parent="." unique_id=92791504]
+script = ExtResource("3_ugvhi")
+
+[node name="InputModule" type="Node" parent="." unique_id=621353652]
+script = ExtResource("4_xw8xn")
+
+[node name="StatusModule" type="Node" parent="." unique_id=1564765916]
+script = ExtResource("5_77tjn")
+
+[node name="StunTimer" type="Timer" parent="StatusModule" unique_id=1800695149]
+one_shot = true
+
+[node name="DebounceTimer" type="Timer" parent="StatusModule" unique_id=1780984388]
+one_shot = true
+
+[node name="StatsModule" type="Node" parent="." unique_id=1639870103]
+script = ExtResource("6_bhndq")
+
+[node name="DamageModule" type="Node" parent="." unique_id=2012431003]
+script = ExtResource("7_expb2")
+
+[node name="AnimModule" type="Node" parent="." unique_id=1667944548]
+script = ExtResource("8_41bko")

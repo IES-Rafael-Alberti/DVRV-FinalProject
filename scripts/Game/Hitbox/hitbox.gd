@@ -3,7 +3,6 @@ extends Area2D
 signal initialized()
 signal hit(this: Node2D)
 
-@export var showHitbox: bool = false
 
 @export_category("Movement Values")
 @export var intMovementDir: Vector3
@@ -16,9 +15,12 @@ signal hit(this: Node2D)
 @export var knockback: Vector3
 @export var targetsAmount: int = 500
 @export var friendGroups: Array[StringName]
+@export var followHeight: bool
 
 @export_category("LIfeTime Values")
 @export var lifeTime: float = -1
+
+var showHitbox: bool = false
 
 func _ready():
 	$HitboxMovementModule.intMovementDir = intMovementDir
@@ -32,8 +34,12 @@ func _ready():
 	$HitboxModule.targetsAmount = targetsAmount
 	$HitboxModule.friendGroups = friendGroups
 	$HitboxModule.callOnHit = "sendHitSignal"
+	$HitboxModule.followHeight = followHeight
 	$LifetimeModule.lifeTime = lifeTime
 	initialized.emit()
+	
+	if !showHitbox:
+		$ImaginaryHitboxShower.queue_free()
 
 func sendHitSignal():
 	hit.emit(self)

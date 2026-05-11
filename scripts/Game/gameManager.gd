@@ -4,6 +4,10 @@ extends Node2D
 @export var PackedPlayers: Array[PackedScene] = []
 @export var SpawnPos: Array[Marker2D] = []
 
+@export_category("Debug")
+@export var ShowCollisions: bool
+@export var ShowHitboxes: bool
+
 @onready var playerFollower: Node2D = $PlayerFollower
 @onready var gameGUI: Control = $Ui
 @onready var gameCamera: Camera2D = $Camera2D
@@ -23,6 +27,8 @@ func spawn_players():
 		instance.MovingArea = mapBoundry
 		instance.Camera = gameCamera
 		instance.position = SpawnPos[i].position
+		instance.ShowCollisions = ShowCollisions
+		instance.ShowHitboxes = ShowHitboxes
 		players.append(instance)
 		$Players.add_child(instance)
 		spawnPlayerGUI(instance) 

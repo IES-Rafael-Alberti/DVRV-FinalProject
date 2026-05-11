@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bttmyp1j1r7sd" path="res://scripts/Game/gameManager.gd" id="1_mhr4y"]
 [ext_resource type="PackedScene" uid="uid://bnc8tnds8ryqw" path="res://scenes/Game/UI/player_gui.tscn" id="2_kcqp7"]
-[ext_resource type="PackedScene" uid="uid://cn0nsbc6f1er4" path="res://scenes/Game/Player/DefaultPlayer.tscn" id="2_mhr4y"]
+[ext_resource type="PackedScene" uid="uid://cn0nsbc6f1er4" path="res://scenes/Game/Entities/Player/DefaultPlayer.tscn" id="2_mhr4y"]
 [ext_resource type="PackedScene" uid="uid://dprhj58a0gbm2" path="res://scenes/Game/UI/UI.tscn" id="3_unq2p"]
-[ext_resource type="Script" uid="uid://bjremamuxi5vk" path="res://scripts/Game/Enemy/EnemySpawner_module.gd" id="4_koclg"]
-[ext_resource type="PackedScene" uid="uid://csu2xssxwqn4n" path="res://scenes/Game/Enemies/Grimp.tscn" id="4_sa5pu"]
+[ext_resource type="Script" uid="uid://bjremamuxi5vk" path="res://scripts/Game/Entities/Enemy/EnemySpawner_module.gd" id="4_koclg"]
+[ext_resource type="PackedScene" uid="uid://csu2xssxwqn4n" path="res://scenes/Game/Entities/Enemies/Grimp.tscn" id="4_sa5pu"]
 [ext_resource type="Texture2D" uid="uid://b4iybnsxsuru6" path="res://images/Map/MainStage Asset.png" id="5_koclg"]
-[ext_resource type="Script" uid="uid://kymh0tus5b24" path="res://player_follower.gd" id="5_unq2p"]
+[ext_resource type="Script" uid="uid://kymh0tus5b24" path="res://scripts/Game/player_follower.gd" id="5_unq2p"]
 [ext_resource type="Texture2D" uid="uid://55whw6ky7rhx" path="res://images/Map/Background Basic Asset.png" id="6_2sju2"]
-[ext_resource type="Script" uid="uid://chelv8jhgtdu4" path="res://events_detector.gd" id="6_crllf"]
+[ext_resource type="Script" uid="uid://chelv8jhgtdu4" path="res://scripts/Game/events_detector.gd" id="6_crllf"]
 [ext_resource type="Script" uid="uid://cpffx88thlrv0" path="res://scripts/Game/playerAreaDetector.gd" id="6_edlo4"]
-[ext_resource type="PackedScene" uid="uid://di32326qpsycx" path="res://scenes/Game/Enemies/Pumpumf.tscn" id="6_ukl1v"]
+[ext_resource type="PackedScene" uid="uid://di32326qpsycx" path="res://scenes/Game/Entities/Enemies/Pumpumf.tscn" id="6_ukl1v"]
+[ext_resource type="PackedScene" uid="uid://b0s4u1e4epkk" path="res://scenes/Game/Entities/Enemies/Flyby.tscn" id="7_46kam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crllf"]
 size = Vector2(128, 720)
@@ -30,7 +31,7 @@ position = Vector2(640, 360)
 z_index = 2
 y_sort_enabled = true
 script = ExtResource("4_koclg")
-enemies = Array[PackedScene]([ExtResource("4_sa5pu"), ExtResource("6_ukl1v")])
+enemies = Array[PackedScene]([ExtResource("4_sa5pu"), ExtResource("6_ukl1v"), ExtResource("7_46kam")])
 
 [node name="Players" type="Node2D" parent="." unique_id=1371707939]
 z_index = 2
@@ -66,7 +67,7 @@ texture = ExtResource("6_2sju2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Boundry" unique_id=259037805]
 position = Vector2(-8, 0)
-polygon = PackedVector2Array(3384, 384, 3384, 704, 24, 704, 24, 384)
+polygon = PackedVector2Array(4296, 384, 4296, 704, 24, 704, 24, 384)
 
 [node name="SpawnPos" type="Node2D" parent="." unique_id=710396889]
 
@@ -93,7 +94,7 @@ position = Vector2(640, 360)
 
 [node name="EventsDetector" type="Node2D" parent="." unique_id=751690982 node_paths=PackedStringArray("waveEvents")]
 script = ExtResource("6_crllf")
-waveEvents = [NodePath("Area1"), NodePath("Area2")]
+waveEvents = [NodePath("Area1"), NodePath("Area2"), NodePath("Area3")]
 
 [node name="Area1" type="Area2D" parent="EventsDetector" unique_id=1414414942]
 position = Vector2(1408, 360)
@@ -111,7 +112,17 @@ script = ExtResource("6_edlo4")
 shape = SubResource("RectangleShape2D_crllf")
 debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
 
+[node name="Area3" type="Area2D" parent="EventsDetector" unique_id=852438193]
+position = Vector2(2624, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area3" unique_id=139451547]
+position = Vector2(896, 0)
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
 [node name="Ui" parent="." unique_id=1782285889 instance=ExtResource("3_unq2p")]
 
 [connection signal="body_entered" from="EventsDetector/Area1" to="EventsDetector/Area1" method="_on_body_entered"]
 [connection signal="body_entered" from="EventsDetector/Area2" to="EventsDetector/Area2" method="_on_body_entered"]
+[connection signal="body_entered" from="EventsDetector/Area3" to="EventsDetector/Area3" method="_on_body_entered"]

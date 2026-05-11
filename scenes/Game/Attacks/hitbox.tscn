@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cepmk55uduy27" path="res://scripts/Game/Hitbox/hitbox_module.gd" id="3_7svxk"]
 [ext_resource type="Script" uid="uid://bghoagk1dci3i" path="res://scripts/Game/Hitbox/hitbox_movement_module.gd" id="4_mf5k8"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="4_vq0b0"]
-[ext_resource type="Script" uid="uid://c378j886clqog" path="res://scenes/Game/Attacks/imaginary_hitbox_shower.gd" id="6_db76l"]
+[ext_resource type="Script" uid="uid://c378j886clqog" path="res://scripts/Game/Hitbox/imaginary_hitbox_shower.gd" id="6_db76l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0vdsg"]
 radius = 8.0

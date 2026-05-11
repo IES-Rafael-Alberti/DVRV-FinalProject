@@ -1,6 +1,6 @@
 extends Node
 
-@export var active: bool = true
+@export var playerInput: bool
 var movement: Vector2 = Vector2(0,0)
 var jumpKey: bool
 var lightAttack: bool
@@ -8,7 +8,7 @@ var heavyAttack: bool
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if active:
+	if playerInput:
 		movement.y = Input.get_axis("MoveUp","MoveDown")
 		movement.x = Input.get_axis("MoveLeft","MoveRight")
 		
