@@ -9,6 +9,8 @@ ui_reset,Restablecer,Reset
 ui_language,Idioma,Language
 ui_start,Iniciar,Start
 ui_pause,Pausa,Pause
+ui_continue,Continuar,Continue
+ui_retry, Reintentar ,Retry
 ui_resume,Reanudar,Resume
 ui_restart,Reiniciar,Restart
 ui_quit,Salir,Quit
@@ -22,3 +24,5 @@ ui_design,Diseño,Design
 ui_programming,Programación,Programming
 ui_art,Arte,Art
 ui_audio,Audio,Audio
+ui_back,Atras,Back
+ui_exit,Salir,Exit

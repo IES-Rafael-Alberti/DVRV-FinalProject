@@ -7,17 +7,22 @@
 [ext_resource type="Script" uid="uid://bjremamuxi5vk" path="res://scripts/Game/Entities/Enemy/EnemySpawner_module.gd" id="4_koclg"]
 [ext_resource type="PackedScene" uid="uid://csu2xssxwqn4n" path="res://scenes/Game/Entities/Enemies/Grimp.tscn" id="4_sa5pu"]
 [ext_resource type="Texture2D" uid="uid://b4iybnsxsuru6" path="res://images/Map/MainStage Asset.png" id="5_koclg"]
-[ext_resource type="Script" uid="uid://kymh0tus5b24" path="res://scripts/Game/player_follower.gd" id="5_unq2p"]
+[ext_resource type="Script" path="res://scripts/Game/player_follower.gd" id="5_unq2p"]
 [ext_resource type="Texture2D" uid="uid://55whw6ky7rhx" path="res://images/Map/Background Basic Asset.png" id="6_2sju2"]
 [ext_resource type="Script" uid="uid://chelv8jhgtdu4" path="res://scripts/Game/events_detector.gd" id="6_crllf"]
 [ext_resource type="Script" uid="uid://cpffx88thlrv0" path="res://scripts/Game/playerAreaDetector.gd" id="6_edlo4"]
 [ext_resource type="PackedScene" uid="uid://di32326qpsycx" path="res://scenes/Game/Entities/Enemies/Pumpumf.tscn" id="6_ukl1v"]
 [ext_resource type="PackedScene" uid="uid://b0s4u1e4epkk" path="res://scenes/Game/Entities/Enemies/Flyby.tscn" id="7_46kam"]
+[ext_resource type="PackedScene" uid="uid://bg4staso4o4oe" path="res://scenes/pausa.tscn" id="14_54qml"]
+[ext_resource type="Texture2D" uid="uid://bsu16p4k2di5d" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Gear.svg" id="15_dm4mq"]
+[ext_resource type="Texture2D" uid="uid://bhkwk6vow0eud" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Pause.svg" id="16_bjgtw"]
+[ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="17_sets"]
+[ext_resource type="Script" uid="uid://spepxxdgiqyg" path="res://scripts/Game/UI/game_hud.gd" id="18_ghud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crllf"]
 size = Vector2(128, 720)
 
-[node name="Game" type="Node2D" unique_id=769547888 node_paths=PackedStringArray("SpawnPos")]
+[node name="Game2" type="Node2D" unique_id=769547888 node_paths=PackedStringArray("SpawnPos")]
 y_sort_enabled = true
 script = ExtResource("1_mhr4y")
 PackedPlayerGUI = ExtResource("2_kcqp7")
@@ -122,7 +127,55 @@ shape = SubResource("RectangleShape2D_crllf")
 debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
 
 [node name="Ui" parent="." unique_id=1782285889 instance=ExtResource("3_unq2p")]
+mouse_filter = 2
+
+[node name="Pausa" parent="." unique_id=732700815 instance=ExtResource("14_54qml")]
+
+[node name="SettingsLayer" type="CanvasLayer" parent="." unique_id=908445966]
+process_mode = 3
+layer = 2
+
+[node name="Settings" parent="SettingsLayer" unique_id=1157954530 instance=ExtResource("17_sets")]
+process_mode = 3
+visible = false
+
+[node name="GameHUD" type="CanvasLayer" parent="." unique_id=1214847952]
+process_mode = 3
+script = ExtResource("18_ghud")
+
+[node name="HUDControl" type="Control" parent="GameHUD" unique_id=515265659]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SettingsButton" type="Button" parent="GameHUD/HUDControl" unique_id=1868079787]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0
+icon = ExtResource("15_dm4mq")
+flat = true
+
+[node name="PauseButton" type="Button" parent="GameHUD/HUDControl" unique_id=680506058]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 72.0
+grow_horizontal = 0
+icon = ExtResource("16_bjgtw")
+flat = true
 
 [connection signal="body_entered" from="EventsDetector/Area1" to="EventsDetector/Area1" method="_on_body_entered"]
 [connection signal="body_entered" from="EventsDetector/Area2" to="EventsDetector/Area2" method="_on_body_entered"]
 [connection signal="body_entered" from="EventsDetector/Area3" to="EventsDetector/Area3" method="_on_body_entered"]
+[connection signal="pressed" from="GameHUD/HUDControl/SettingsButton" to="GameHUD" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="GameHUD/HUDControl/PauseButton" to="GameHUD" method="_on_pause_button_pressed"]

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bg4staso4o4oe"]
+
+[ext_resource type="Script" uid="uid://bof5uxpph482r" path="res://scripts/Menu/pausa.gd" id="1_3kuwy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kuwy"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtdsr"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vvwb"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Pausa" type="CanvasLayer" unique_id=732700815]
+process_mode = 3
+script = ExtResource("1_3kuwy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=412132605]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0.07450981, 0.07450981, 0.43529412)
+
+[node name="Label" type="Label" parent="." unique_id=220355588]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -272.0
+offset_right = 20.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "ui_pause"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1519830261]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -17.5
+offset_right = 41.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3kuwy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtdsr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vvwb")
+text = "ui_quit"
+
+[node name="ContinueButton" type="Button" parent="." unique_id=2095722775]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -80.0
+offset_right = 70.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3kuwy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtdsr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vvwb")
+text = "ui_continue"
+
+[node name="RetryButton" type="Button" parent="." unique_id=346753941]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -50.0
+offset_right = 41.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3kuwy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtdsr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1vvwb")
+text = "ui_retry"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
