@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://j6tea6c0qcxx"]
+
+[ext_resource type="Texture2D" uid="uid://cjemrfvl7hey1" path="res://images/Cutscene/Cutscene1.png" id="1_edmg7"]
+
+[node name="Cutscene" type="Control" unique_id=851399177]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1425063946]
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 720.0
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=2059517712]
+position = Vector2(641.25, 358)
+scale = Vector2(0.6695312, 0.66851854)
+texture = ExtResource("1_edmg7")
+
+[node name="Label" type="Label" parent="." unique_id=1899094001]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 475.0
+offset_right = 1115.0
+offset_bottom = 646.0
+text = "cutscene1"
