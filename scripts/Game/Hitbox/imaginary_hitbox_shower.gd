@@ -14,7 +14,5 @@ func _on_initialized():
 	
 	if thisOwner:
 		while true:
-			imaginaryHitbox.position.y = -thisOwner.PlayerModule.HeightModule.height/this.scale.y if this.get_parent() is CharacterBody2D else 0
+			imaginaryHitbox.position.y = -this.HitboxMovementModule.height/this.scale.y
 			await get_tree().process_frame
-			if !this.followHeight:
-				break

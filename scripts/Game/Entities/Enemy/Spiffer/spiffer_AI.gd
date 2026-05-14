@@ -8,7 +8,6 @@ extends Node2D
 @onready var AIUtils: Node = get_node("AIUtils")
 
 var isBusy: bool = false
-var targets: Array[CharacterBody2D] = []
 var behavior: int = 0
 
 @export_category("Mode 1 = Move To Position")
@@ -36,7 +35,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _AIProcess(delta):
 	playerModule.InputModule.movement = Vector2.ZERO
-	var closest = AIUtils.findClosestTarget()
+	var closest = AIUtils.findClosestTarget(this.get_node("EnemiesDetector").enemies)
 	AIUtils.lookPlayer(closest)
 	if closest:
 		var posDist = abs(closest.position - this.position) 
@@ -47,5 +46,6 @@ func _AIProcess(delta):
 				AIUtils.useJump()
 				behavior = 2
 			2:
-				AIUtils.useLightAttack()
+				AIUtils.useHeavyAttack()
+				#AIUtils.useLightAttack()
 	pass

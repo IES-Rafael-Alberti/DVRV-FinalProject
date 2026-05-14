@@ -24,6 +24,8 @@ script = ExtResource("1_mhr4y")
 PackedPlayerGUI = ExtResource("2_kcqp7")
 PackedPlayers = Array[PackedScene]([ExtResource("2_mhr4y")])
 SpawnPos = [NodePath("SpawnPos/P1"), NodePath("SpawnPos/P2"), NodePath("SpawnPos/P3"), NodePath("SpawnPos/P4")]
+ShowCollisions = true
+ShowHitboxes = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1110206721]
 position = Vector2(640, 360)

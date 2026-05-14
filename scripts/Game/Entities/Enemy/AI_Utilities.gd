@@ -74,11 +74,11 @@ func useHeavyAttack():
 #####                              Others                                 #####
 ################################################################################
 
-func findClosestTarget():
+func findClosestTarget(targets: Array[CharacterBody2D]):
 	var closest: Node2D = null
 	var closest_pos := INF
 	
-	for target in thisAI.targets:
+	for target in targets:
 		if target == null: continue
 		
 		var dist: float = this.position.distance_squared_to(target.global_position)
@@ -97,11 +97,3 @@ func waitTime(time: float):
 ################################################################################
 #####                              Signals                                 #####
 ################################################################################
-
-func _on_ai_range_body_entered(body):
-	if body.is_in_group("Player"):
-		thisAI.targets.append(body)
-
-func _on_ai_range_body_exited(body):
-	if body.is_in_group("Player"):
-		thisAI.targets.erase(body)

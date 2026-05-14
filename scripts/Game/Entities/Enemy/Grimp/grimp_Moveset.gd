@@ -1,6 +1,5 @@
 extends Node
 
-@export var hitboxPacked: PackedScene
 @onready var player: Node = get_parent()
 @onready var playerModule: Node = get_parent().PlayerModule
 @onready var movesetUtils: Node = $MovesetUtils

@@ -4,16 +4,18 @@
 [ext_resource type="Script" uid="uid://x6oifdqj03x5" path="res://scripts/Game/Entities/Enemy/enemy_death.gd" id="2_wwuxe"]
 [ext_resource type="Script" uid="uid://mar8jnpxpnmd" path="res://scripts/Game/Entities/Enemy/Spiffer/spiffer_Moveset.gd" id="3_qhrni"]
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="4_7p0vy"]
+[ext_resource type="PackedScene" uid="uid://oti8bx5fwa0l" path="res://scenes/Game/Entities/Projectiles/Spiffer Spit.tscn" id="4_wwuxe"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_5we2g"]
 [ext_resource type="Script" uid="uid://cq1w8o35ndc0o" path="res://scripts/Game/Entities/Enemy/Spiffer/spiffer_AI.gd" id="6_wwuxe"]
+[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="7_4foeg"]
 [ext_resource type="Script" uid="uid://clkkjr4bwsqf1" path="res://scripts/Game/Entities/Enemy/AI_Utilities.gd" id="7_chu3p"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="8_1xvb6"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="9_v37mt"]
 [ext_resource type="Texture2D" uid="uid://de8xycmp1afo4" path="res://images/Entities/shadow.png" id="10_5db2o"]
 [ext_resource type="Texture2D" uid="uid://bmo60xnfuvpof" path="res://images/Entities/Enemies/Spiffter Spritesheet.png" id="11_qhrni"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nbf47"]
-radius = 2000.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwuxe"]
+radius = 1286.384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_00ayx"]
 radius = 48.0
@@ -1931,21 +1933,22 @@ deathAnim = &"Defeat"
 
 [node name="SpifferMoveset" type="Node" parent="." unique_id=716930840]
 script = ExtResource("3_qhrni")
+SHProyectile = ExtResource("4_wwuxe")
+SVProyectile = ExtResource("4_wwuxe")
 
 [node name="MovesetUtils" type="Node" parent="SpifferMoveset" unique_id=2037218752]
 script = ExtResource("5_5we2g")
 hitboxPacked = ExtResource("4_7p0vy")
 
+[node name="EnemiesDetector" type="Area2D" parent="." unique_id=1521546705]
+script = ExtResource("7_4foeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesDetector" unique_id=971214627]
+shape = SubResource("CircleShape2D_wwuxe")
+debug_color = Color(0.62, 0.41333336, 0, 0.039215688)
+
 [node name="AIModule" type="Node2D" parent="." unique_id=376197860]
 script = ExtResource("6_wwuxe")
-
-[node name="AiRange" type="Area2D" parent="AIModule" unique_id=495530485]
-position = Vector2(640, 256)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AIModule/AiRange" unique_id=1789317739]
-position = Vector2(-640, -256)
-shape = SubResource("CircleShape2D_nbf47")
-debug_color = Color(0.62, 0.41333336, 0, 0.039215688)
 
 [node name="AIUtils" type="Node" parent="AIModule" unique_id=373234183]
 script = ExtResource("7_chu3p")
@@ -2016,5 +2019,5 @@ parameters/Walk/blend_position = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=906523404]
 libraries/ = SubResource("AnimationLibrary_4foeg")
 
-[connection signal="body_entered" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_entered"]
-[connection signal="body_exited" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_exited"]
+[connection signal="body_entered" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_exited"]
