@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProyectoFinal"
-run/main_scene="uid://ddfu83q6oko6m"
+run/main_scene="uid://mxw8lddn2vpf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [audio]
