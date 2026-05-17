@@ -40,7 +40,7 @@ func _ready():
 func _AIProcess(delta):
 	if isBusy: return
 	playerModule.InputModule.movement = Vector2.ZERO
-	var closest = AIUtils.findClosestTarget()
+	var closest = AIUtils.findClosestTarget(this.get_node("EnemiesDetector").enemies)
 	if closest:
 		var posDist = abs(closest.position - this.position) 
 		match behavior:

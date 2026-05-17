@@ -41,7 +41,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _AIProcess(delta):
 	playerModule.InputModule.movement = Vector2.ZERO
-	var closest = AIUtils.findClosestTarget()
+	var closest = AIUtils.findClosestTarget(this.get_node("EnemiesDetector").enemies)
 	if closest:
 		var posDist = abs(closest.position - this.position) 
 		match behavior:

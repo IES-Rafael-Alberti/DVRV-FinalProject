@@ -9,7 +9,7 @@ extends Node
 ################################################################################
 
 func lookPlayer(target: CharacterBody2D):
-	if !playerModule.StatusModule.isStunned:
+	if !playerModule.StatusModule.isStunned and target:
 		if target.position.x > this.position.x:
 			playerModule.StatusModule.setLookDir(1)
 		elif target.position.x < this.position.x:

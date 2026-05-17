@@ -24,8 +24,9 @@ func _ready():
 func wave1():
 	setCameraFollow(false)
 	for i in range(0,1):
-		EnemiesNode.spawnEnemy("Spiffer")
+		EnemiesNode.spawnEnemy("Grimp")
 		await get_tree().create_timer(0.5).timeout
+		EnemiesNode.spawnEnemy("Grimp")
 		#EnemiesNode.spawnEnemy("Flyby")
 	waitUntilEnemyClear()
 	pass
@@ -43,13 +44,15 @@ func wave2():
 func wave3():
 	setCameraFollow(false)
 	while true:
-		match randi_range(0,3):
+		match randi_range(0,4):
 			0:
 				EnemiesNode.spawnEnemy("Grimp")
 			1:
 				EnemiesNode.spawnEnemy("Flyby")
 			2:
 				EnemiesNode.spawnEnemy("Pumpumf")
+			3:
+				EnemiesNode.spawnEnemy("Spiffer")
 		await get_tree().create_timer(2).timeout
 	pass
 	
