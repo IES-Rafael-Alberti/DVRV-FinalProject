@@ -11,7 +11,6 @@
 radius = 8.0
 
 [node name="Hitbox" type="Area2D" unique_id=2127241327 node_paths=PackedStringArray("HitboxModule", "HitboxMovementModule", "LifetimeModule", "ImaginaryHitbox")]
-top_level = true
 position = Vector2(640, 384)
 collision_layer = 0
 collision_mask = 3
@@ -61,6 +60,9 @@ position = Vector2(-1.4424324e-05, -3.2186508e-06)
 scale = Vector2(0.03199998, 0.031999998)
 texture = ExtResource("4_vq0b0")
 
+[connection signal="body_entered" from="." to="HitboxModule" method="_on_body_entered"]
+[connection signal="body_exited" from="." to="HitboxModule" method="_on_body_exit"]
 [connection signal="initialized" from="." to="LifetimeModule" method="_on_initialized"]
+[connection signal="initialized" from="." to="HitboxModule" method="_on_initialized"]
 [connection signal="initialized" from="." to="HitboxMovementModule" method="_on_initialized"]
 [connection signal="initialized" from="." to="ImaginaryHitboxShower" method="_on_initialized"]

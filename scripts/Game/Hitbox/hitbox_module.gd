@@ -17,12 +17,6 @@ var inside: Array[CharacterBody2D] = []
 var hitted: Array[CharacterBody2D] = []
 var newHeight: float = 0
 
-func _ready():
-	thisOwner = this.get_parent() if this.get_parent() is CharacterBody2D else null
-	
-	this.body_entered.connect(_on_body_entered)
-	this.body_exited.connect(_on_body_exit)
-
 func _process(delta):
 	newHeight = this.HitboxMovementModule.height
 	newHeight += thisOwner.PlayerModule.HeightModule.height
@@ -41,15 +35,15 @@ func _process(delta):
 ################################################################################
 
 func isTrulyIn(body):
-	var thisRadius = this.get_node("CollisionShape2D").shape.radius * this.scale.y
+	var thisHitbox = this.get_node("CollisionShape2D")
+	var thisRadius = thisHitbox.shape.radius * this.scale.y
+	var hitboxYDist = thisHitbox.global_position.y - body.global_position.y
 	var bodyHeight = body.PlayerModule.HeightModule.height
-	var bodyCosHeight = -body.CollisionBox.position.y
 	var bodyRadius = body.CollisionBox.shape.radius
-	var bodyColPosY = body.CollisionBox.global_position + Vector2(0,bodyHeight)
-	print(bodyHeight + bodyRadius + bodyCosHeight ," >= ", newHeight - thisRadius ,"   and   ", bodyHeight - bodyRadius + bodyCosHeight ," <= ", newHeight + thisRadius)
-	if bodyHeight + bodyRadius + bodyCosHeight >= newHeight - thisRadius and bodyHeight - bodyRadius + bodyCosHeight <= newHeight + thisRadius:
-		if bodyColPosY.distance_to(this.global_position + Vector2(0,bodyHeight)) <= thisRadius + bodyRadius:
-			return true
+	var bodyColPosY = body.CollisionBox.position.y
+	
+	if bodyHeight + bodyRadius + hitboxYDist - bodyColPosY >= newHeight - thisRadius and bodyHeight - bodyRadius + hitboxYDist - bodyColPosY <= newHeight + thisRadius:
+		return true
 	return false
 
 func isEnemy(body):

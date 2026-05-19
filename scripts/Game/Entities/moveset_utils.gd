@@ -18,11 +18,58 @@ func tpToPosition(target: Vector2):
 	player.position = target
 	
 func lookPlayer(target: CharacterBody2D):
-	var playerModule = player.PlayerModule
+	var statusModule = player.PlayerModule.StatusModule
+	if target:
+		if target.position.x > player.position.x:
+			statusModule.setLookDir(1)
+		elif target.position.x < player.position.x:
+			statusModule.setLookDir(-1)
+	
 	
 func getTargetPos(target: CharacterBody2D):
-	pass
+	return target.global_position
 
+func wait_physics_frames(frames: int) -> void:
+	for i in frames:
+		await get_tree().physics_frame
+
+################################################################################
+#####                           Calculations                               #####
+################################################################################
+
+func findClosestTarget(targets: Array[CharacterBody2D]):
+	var closest: Node2D = null
+	var closest_pos := INF
+	
+	for target in targets:
+		if target == null: continue
+		
+		var dist: float = player.position.distance_squared_to(target.global_position)
+		if dist < closest_pos:
+			closest_pos = dist
+			closest = target
+	
+	return closest
+
+func frames_until_zero(height: float, velocity: float, acceleration: float):
+	if acceleration >= 0:
+		return -1
+	var A = acceleration / 2.0
+	var B = velocity - acceleration / 2.0
+	var C = height
+
+	var discriminant = B * B - 4.0 * A * C
+
+	if discriminant < 0.0:
+		return -1.0
+
+	var sqrt_disc = sqrt(discriminant)
+
+	var n1 = (-B + sqrt_disc) / (2.0 * A)
+	var n2 = (-B - sqrt_disc) / (2.0 * A)
+
+	return max(n1, n2)
+		
 ################################################################################
 #####                              Spawner                                 #####
 ################################################################################
@@ -62,8 +109,11 @@ func spawnProyectile(proyectile, lookDir, positionOffset = Vector3.ZERO, intMove
 	if knockback: hitbox.knockback = knockback*Vector3(1,1,1)
 	if targetsAmount: hitbox.targetsAmount = targetsAmount
 	hitbox.followHeight = followParent
-	hitbox.top_level = !followParent
-	if followParent: hitbox.z_index = player.z_index
 	hitbox.showHitbox = player.ShowHitboxes
-	player.add_child(hitbox)
+	hitbox.thisOwner = player
+	
+	if followParent:
+		player.add_child(hitbox)
+	else:
+		player.get_parent().add_child(hitbox)
 	return hitbox

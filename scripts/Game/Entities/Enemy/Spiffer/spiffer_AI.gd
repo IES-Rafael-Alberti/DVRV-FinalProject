@@ -1,7 +1,7 @@
 extends Node2D
 
 @export_category("General")
-@export var waitTimeRange: Vector2 = Vector2(1,3)
+@export var waitTimeRange: Vector2 = Vector2(3,7)
 
 @onready var this: Node = get_parent()
 @onready var playerModule: Node = this.get_node("PlayerModule")
@@ -17,7 +17,7 @@ var behavior: int = 0
 var targetOffset: Vector2 = Vector2.ZERO
 
 @export_category("Mode 2 = Attack")
-@export var atkDistKeep: Vector2 = Vector2(150,30)
+@export var distanceToHorizontal: Vector2 = Vector2(800,10)
 @export var waitUntilAttack: float = 1
 
 func _ready():
@@ -27,7 +27,6 @@ func _ready():
 			await get_tree().process_frame
 			continue
 		behavior = 1
-		#behavior = randi_range(1, 2) if behavior == 0 else randi_range(0, 2)
 		
 		await get_tree().create_timer(randf_range(waitTimeRange.x,waitTimeRange.y)).timeout
 		
@@ -37,15 +36,25 @@ func _AIProcess(delta):
 	playerModule.InputModule.movement = Vector2.ZERO
 	var closest = AIUtils.findClosestTarget(this.get_node("EnemiesDetector").enemies)
 	AIUtils.lookPlayer(closest)
-	if closest:
-		var posDist = abs(closest.position - this.position) 
+	print(behavior)
+	if isBusy: return
+	isBusy = true
+	if closest: 
 		match behavior:
 			0:
 				pass
 			1:
+				while !playerModule.StatusModule.canMove():
+					await get_tree().physics_frame 
 				AIUtils.useJump()
 				behavior = 2
 			2:
-				AIUtils.useHeavyAttack()
-				#AIUtils.useLightAttack()
+				var dist = this.global_position - closest.global_position
+				if abs(dist.y) < distanceToHorizontal.y and abs(dist.x) < distanceToHorizontal.x:
+					AIUtils.useLightAttack()
+				else:
+					AIUtils.useHeavyAttack()
+			3:
+				pass
+	isBusy = false
 	pass

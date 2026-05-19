@@ -11,13 +11,13 @@ signal hit(this: Node2D)
 @export var ImaginaryHitbox: Node2D
 @export var Visual: Node2D
 
-
 @export_category("Movement Values")
 @export var lookDir: int = 1
 @export var intMovementDir: Vector3
 @export var AccelerationDir: Vector3
 
 @export_category("Hitbox Values")
+@export var thisOwner: CharacterBody2D
 @export var damage: int
 @export var height: int
 @export var stuntime: float
@@ -41,6 +41,7 @@ func _ready():
 	ImaginaryHitbox.visible = showHitbox
 	HitboxModule.damage = damage
 	HitboxModule.stuntime = stuntime
+	HitboxModule.thisOwner = thisOwner
 	HitboxModule.knockback = knockback
 	HitboxModule.targetsAmount = targetsAmount
 	HitboxModule.friendGroups = friendGroups

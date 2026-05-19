@@ -28,6 +28,35 @@ SpawnPos = [NodePath("SpawnPos/P1"), NodePath("SpawnPos/P2"), NodePath("SpawnPos
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1110206721]
 position = Vector2(640, 360)
 
+[node name="EventsDetector" type="Node2D" parent="." unique_id=751690982 node_paths=PackedStringArray("waveEvents")]
+script = ExtResource("6_crllf")
+waveEvents = [NodePath("Area1"), NodePath("Area2"), NodePath("Area3")]
+
+[node name="Area1" type="Area2D" parent="EventsDetector" unique_id=1414414942]
+position = Vector2(1408, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area1" unique_id=610897106]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area2" type="Area2D" parent="EventsDetector" unique_id=2132509691]
+position = Vector2(2624, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area2" unique_id=2053770802]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area3" type="Area2D" parent="EventsDetector" unique_id=852438193]
+position = Vector2(2624, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area3" unique_id=139451547]
+position = Vector2(896, 0)
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
 [node name="Enemies" type="Node2D" parent="." unique_id=2062962674]
 z_index = 2
 y_sort_enabled = true
@@ -91,35 +120,6 @@ FollowingPlayerUI = [NodePath("../Ui")]
 
 [node name="CenterArea" type="Marker2D" parent="PlayerFollower" unique_id=317310174]
 position = Vector2(640, 360)
-
-[node name="EventsDetector" type="Node2D" parent="." unique_id=751690982 node_paths=PackedStringArray("waveEvents")]
-script = ExtResource("6_crllf")
-waveEvents = [NodePath("Area1"), NodePath("Area2"), NodePath("Area3")]
-
-[node name="Area1" type="Area2D" parent="EventsDetector" unique_id=1414414942]
-position = Vector2(1408, 360)
-script = ExtResource("6_edlo4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area1" unique_id=610897106]
-shape = SubResource("RectangleShape2D_crllf")
-debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
-
-[node name="Area2" type="Area2D" parent="EventsDetector" unique_id=2132509691]
-position = Vector2(2624, 360)
-script = ExtResource("6_edlo4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area2" unique_id=2053770802]
-shape = SubResource("RectangleShape2D_crllf")
-debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
-
-[node name="Area3" type="Area2D" parent="EventsDetector" unique_id=852438193]
-position = Vector2(2624, 360)
-script = ExtResource("6_edlo4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area3" unique_id=139451547]
-position = Vector2(896, 0)
-shape = SubResource("RectangleShape2D_crllf")
-debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
 
 [node name="Ui" parent="." unique_id=1782285889 instance=ExtResource("3_unq2p")]
 

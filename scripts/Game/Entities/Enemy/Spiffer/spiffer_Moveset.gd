@@ -27,17 +27,17 @@ var TpNumber: int = 0
 @export var SHStuntime: float = 0.5
 
 @export var SHHitboxOffset: Vector3 = Vector3(0,10,0)
-@export var SHHitboxintMovementDir: Vector3 = Vector3(5,5,0)
-@export var SHHitboxAccelerationDir: Vector3 = Vector3(0,-0.1,0)
+@export var SHHitboxintMovementDir: Vector3 = Vector3(10,5,0)
+@export var SHHitboxAccelerationDir: Vector3 = Vector3(0,-0.15,0)
 @export var SHHitboxSize: int = 3
 @export var SHHitboxLifetime: float = -1
 @export var SHHitboxTargets: float = 1
 
 @export var SHPlayerMovement: Vector3 = Vector3(0,0,0)
 @export var SHStartLagTime: float = 0.2
-@export var SHDebounceTime: float = 0.2
+@export var SHDebounceTime: float = 2
 @export var SHAnim: Array[String] = ["SpitHorizontalSLag", "SpitHorizontal"]
-@export var SHResetTime: float = 1.0
+@export var SHResetTime: float = 0
 var SHNumber: int = 0
 
 @export_category("Spit Vertical")
@@ -47,17 +47,17 @@ var SHNumber: int = 0
 @export var SVStuntime: float = 0.5
 
 @export var SVHitboxOffset: Vector3 = Vector3(0,10,0)
-@export var SVHitboxintMovementDir: Vector3 = Vector3(5,5,0)
-@export var SVHitboxAccelerationDir: Vector3 = Vector3(0,-0.1,0)
+@export var SVHitboxintMovementDir = Vector3(0,20,0)
+@export var SVHitboxAccelerationDir = Vector3(0,-0.5,0)
 @export var SVHitboxSize: int = 3
 @export var SVHitboxLifetime: float = -1
 @export var SVHitboxTargets: float = 1
 
 @export var SVPlayerMovement: Vector3 = Vector3(0,0,0)
 @export var SVStartLagTime: float = 0.8
-@export var SVDebounceTime: float = 0.2
+@export var SVDebounceTime: float = 1
 @export var SVAnim: Array[String] = ["SpitVerticalSLag", "SpitVertical"]
-@export var SVResetTime: float = 1.0
+@export var SVResetTime: float = 0
 var SVNumber: int = 0
 
 func _initialized():
@@ -154,9 +154,17 @@ func heavyAttack():
 	
 	playerModule.MovementModule.applyForceV3(SVPlayerMovement * Vector3(lookDir, 1, 1))
 	
+	## Calculates Shoot
+	var closest = movesetUtils.findClosestTarget(player.get_node("EnemiesDetector").enemies)
+	var frames = movesetUtils.frames_until_zero(0,SVHitboxintMovementDir.y,SVHitboxAccelerationDir.y)
+	var distFrame = (closest.global_position - player.global_position)/frames
+	
+	SVHitboxintMovementDir.x = abs(distFrame.x) # Compensates the invertion of lookDir
+	SVHitboxintMovementDir.z = distFrame.y
+	
 	movesetUtils.spawnProyectile(
 		SVProyectile,
-		lookDir,
+		min(1,max(-1,distFrame.x*100)),
 		SVHitboxOffset, 
 		SVHitboxintMovementDir, 
 		SVHitboxAccelerationDir, 
@@ -172,6 +180,7 @@ func heavyAttack():
 	
 	SVNumber += 1
 	var befAtkN = SVNumber
+		
 	await get_tree().create_timer(SVDebounceTime).timeout
 	if !playerModule.StatusModule.isStunned:
 		playerModule.AnimModule.resetAnim()
@@ -179,3 +188,4 @@ func heavyAttack():
 	await get_tree().create_timer(SVResetTime).timeout
 	if befAtkN == SVNumber:
 		SVNumber = 0
+	
