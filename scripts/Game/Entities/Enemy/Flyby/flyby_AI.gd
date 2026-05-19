@@ -20,7 +20,7 @@ var targetOffset: Vector2 = Vector2.ZERO
 @export_category("Mode 2 = KickAttack")
 @export var atkDistKeep: Vector2 = Vector2(150,30)
 @export var waitUntilAttack: float = 1
-@export var atkChance: Vector2 = Vector2(1,50)
+@export var atkChance: Vector2 = Vector2(1,20)
 
 func _ready():
 	await get_tree().create_timer(0.2).timeout

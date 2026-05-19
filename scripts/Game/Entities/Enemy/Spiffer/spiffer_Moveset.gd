@@ -71,7 +71,7 @@ func jump():
 	if 1 <= TpNumber or playerModule.StatusModule.isStunned: return
 	
 	TpNumber += 1
-	playerModule.StatusModule.applyDebounce(TpDebounceTime + TpStartLagTime)
+	playerModule.StatusModule.applyDebounce(TpDebounceTime + TpStartLagTime+1)
 	playerModule.AnimModule.forceAnim(TpAnim[0])
 	await get_tree().create_timer(TpStartLagTime).timeout
 	if playerModule.StatusModule.isStunned:
