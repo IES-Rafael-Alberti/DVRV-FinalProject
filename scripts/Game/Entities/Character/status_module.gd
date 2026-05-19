@@ -10,6 +10,8 @@ var lookDir: int = 1
 var isKnockbacked: bool = false
 var knockbackDir: int = 1 
 var isDead: bool = false
+var isInvisible: bool = false
+var canBeDamaged: bool = true
 
 @onready var StunTimer: Timer = $StunTimer
 @onready var DebounceTimer: Timer = $DebounceTimer
@@ -50,3 +52,9 @@ func setLookDir(newDir: float):
 func setDead():
 	isDead = true
 	playerModule.player.dead.emit(playerModule.player)
+	
+func setVisible(visible: bool):
+	isInvisible = !visible
+
+func setCanBeDamaged(damaged: bool):
+	canBeDamaged = damaged

@@ -4,11 +4,15 @@
 [ext_resource type="Script" uid="uid://x6oifdqj03x5" path="res://scripts/Game/Entities/Enemy/enemy_death.gd" id="2_jpqlp"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_82rnm"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="6_5eqfn"]
+[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="7_mpo4x"]
 [ext_resource type="Script" uid="uid://bb1v4f07bx0gm" path="res://scripts/Game/Entities/Character/P1/P1_moveset.gd" id="8_53s13"]
 [ext_resource type="Texture2D" uid="uid://de8xycmp1afo4" path="res://images/Entities/shadow.png" id="8_khinc"]
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="9_hpxot"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="9_wrl72"]
 [ext_resource type="Texture2D" uid="uid://d10n42b6hgrec" path="res://images/Player/P1 Spritesheet.png" id="14_00enb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6d4j"]
+radius = 1286.384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpqlp"]
 radius = 40.0
@@ -2185,7 +2189,6 @@ script = ExtResource("2_jpqlp")
 
 [node name="P1Moveset" type="Node" parent="." unique_id=1424738163]
 script = ExtResource("8_53s13")
-hitboxPacked = ExtResource("9_hpxot")
 
 [node name="MovesetUtils" type="Node" parent="P1Moveset" unique_id=886414919]
 script = ExtResource("5_82rnm")
@@ -2194,6 +2197,13 @@ hitboxPacked = ExtResource("9_hpxot")
 [node name="PlayerModule" parent="." unique_id=1088861868 node_paths=PackedStringArray("MovesetModule") instance=ExtResource("6_5eqfn")]
 playerInput = true
 MovesetModule = NodePath("../P1Moveset")
+
+[node name="EnemiesDetector" type="Area2D" parent="." unique_id=1048807248]
+script = ExtResource("7_mpo4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesDetector" unique_id=1678275042]
+shape = SubResource("CircleShape2D_b6d4j")
+debug_color = Color(0.62, 0.41333336, 0, 0.039215688)
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=94871496]
 z_index = 1
@@ -2260,3 +2270,6 @@ parameters/Walk/blend_position = 0.0
 deterministic = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_sd4hf")
+
+[connection signal="body_entered" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_exited"]

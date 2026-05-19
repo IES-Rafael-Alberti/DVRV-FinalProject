@@ -1,5 +1,8 @@
 extends Node
 
+@export var setMovement = true
+@export var this: Area2D
+@export var lookDir: int
 @export var intMovementDir: Vector3
 @export var AccelerationDir: Vector3
 @export var intHeight: float
@@ -11,14 +14,22 @@ var velocity: Vector3 = Vector3.ZERO
 var height: float = 0
 
 func _on_initialized():
-	velocity = intMovementDir
+	this = get_parent()
+	velocity = intMovementDir*Vector3(lookDir,1,1)
 	height = intHeight
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	velocity += AccelerationDir
-	proyectile.position += Vector2(velocity.x,-velocity.y+velocity.z)
-	height += velocity.y
+func _physics_process(delta: float) -> void:
+	if setMovement:
+		velocity += AccelerationDir*Vector3(lookDir,1,1)
+		proyectile.position += Vector2(velocity.x,0+velocity.z)
+		if proyectile.Visual:
+			proyectile.Visual.position.y = -height/this.scale.y
+		height += velocity.y
 	
 	if height < 0:
-		proyectile.queue_free()
+		setMovement = false
+		this.LifetimeModule.setDespawnPhase()
+		AccelerationDir = Vector3.ZERO
+		intMovementDir = Vector3.ZERO
+		height = 0

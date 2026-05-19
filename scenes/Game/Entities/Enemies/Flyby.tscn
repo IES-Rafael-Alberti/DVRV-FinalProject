@@ -2,15 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dbjji30kw3c0f" path="res://scripts/Game/Entities/Character/playerPhysics.gd" id="1_go55b"]
 [ext_resource type="Script" uid="uid://x6oifdqj03x5" path="res://scripts/Game/Entities/Enemy/enemy_death.gd" id="2_8ryn8"]
-[ext_resource type="Script" uid="uid://cnc6gacvg1ivt" path="res://scenes/Game/Entities/Enemies/flyby_Moveset.gd" id="3_go55b"]
+[ext_resource type="Script" uid="uid://cnc6gacvg1ivt" path="res://scripts/Game/Entities/Enemy/Flyby/flyby_Moveset.gd" id="3_go55b"]
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="4_tyysi"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_ylej0"]
+[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="6_5xbcs"]
 [ext_resource type="Script" uid="uid://dgmokw7dba17l" path="res://scripts/Game/Entities/Enemy/Flyby/flyby_AI.gd" id="6_go55b"]
 [ext_resource type="Script" uid="uid://clkkjr4bwsqf1" path="res://scripts/Game/Entities/Enemy/AI_Utilities.gd" id="7_eadth"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="8_v7v52"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="9_1y1uf"]
+[ext_resource type="Script" uid="uid://ccpko0nfby6p4" path="res://scripts/Game/Entities/flying_module.gd" id="9_8ryn8"]
 [ext_resource type="Texture2D" uid="uid://de8xycmp1afo4" path="res://images/Entities/shadow.png" id="10_f71au"]
 [ext_resource type="Texture2D" uid="uid://dapgnwkvf74w5" path="res://images/Entities/Enemies/Flyby Spritesheet.png" id="11_go55b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyysi"]
+radius = 1286.384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbf47"]
 radius = 2000.0
@@ -1712,24 +1717,31 @@ _data = {
 &"UpRight": SubResource("Animation_m2t77")
 }
 
-[node name="EnemyDefault" type="CharacterBody2D" unique_id=187010336 node_paths=PackedStringArray("DeathNode", "AIModule") groups=["Enemy", "Entity"]]
+[node name="EnemyDefault" type="CharacterBody2D" unique_id=187010336 node_paths=PackedStringArray("DeathNode", "AIModule", "FlyingModule") groups=["Enemy", "Entity"]]
 position = Vector2(640, 320)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_go55b")
 DeathNode = NodePath("EnemyDeath")
 AIModule = NodePath("AIModule")
+FlyingModule = NodePath("PlayerModule/FlyingModule")
 
 [node name="EnemyDeath" type="Node" parent="." unique_id=971704386]
 script = ExtResource("2_8ryn8")
 
 [node name="FlybyMoveset" type="Node" parent="." unique_id=716930840]
 script = ExtResource("3_go55b")
-hitboxPacked = ExtResource("4_tyysi")
 
 [node name="MovesetUtils" type="Node" parent="FlybyMoveset" unique_id=2037218752]
 script = ExtResource("5_ylej0")
 hitboxPacked = ExtResource("4_tyysi")
+
+[node name="EnemiesDetector" type="Area2D" parent="." unique_id=1655884244]
+script = ExtResource("6_5xbcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesDetector" unique_id=2001668205]
+shape = SubResource("CircleShape2D_tyysi")
+debug_color = Color(0.62, 0.41333336, 0, 0.039215688)
 
 [node name="AIModule" type="Node2D" parent="." unique_id=376197860]
 script = ExtResource("6_go55b")
@@ -1748,6 +1760,10 @@ script = ExtResource("7_eadth")
 [node name="PlayerModule" parent="." unique_id=1088861868 node_paths=PackedStringArray("animTree", "MovesetModule") instance=ExtResource("8_v7v52")]
 animTree = NodePath("../Visual/AnimationTree")
 MovesetModule = NodePath("../FlybyMoveset")
+
+[node name="FlyingModule" type="Node" parent="PlayerModule" unique_id=1040500888 node_paths=PackedStringArray("playerModule")]
+script = ExtResource("9_8ryn8")
+playerModule = NodePath("..")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=146435598]
 z_index = 1
@@ -1806,5 +1822,7 @@ parameters/Walk/blend_position = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1755803393]
 libraries/ = SubResource("AnimationLibrary_5xbcs")
 
+[connection signal="body_entered" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_exited"]
 [connection signal="body_entered" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_entered"]
 [connection signal="body_exited" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_exited"]

@@ -10,6 +10,9 @@ func _process(delta):
 	if not status:
 		status = playerModule.StatusModule
 		return
+		
+	playerModule.charShadow.visible = !status.isInvisible
+	playerModule.charVisual.visible = !status.isInvisible
 	animTree = playerModule.charVisual.get_node("AnimationTree")
 	setAim()
 

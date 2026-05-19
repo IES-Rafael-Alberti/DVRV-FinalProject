@@ -11,6 +11,7 @@ signal dead(this: CharacterBody2D)
 @export_category("InNode")
 @export var DeathNode: Node
 @export var AIModule: Node2D
+@export var FlyingModule: Node
 @onready var PlayerModule: Node = $PlayerModule
 @onready var CollisionBox: CollisionShape2D = $CollisionBox
 
@@ -37,3 +38,5 @@ func _physics_process(delta):
 	PlayerModule.MovementModule._movementProcess(delta)
 	if AIModule:
 		AIModule._AIProcess(delta)
+	if FlyingModule:
+		FlyingModule._flyingProcess(delta)

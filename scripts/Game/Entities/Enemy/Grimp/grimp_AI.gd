@@ -14,6 +14,8 @@ var behavior: int = 0
 @export_category("Mode 1 = Move Towards")
 @export var distKeep: Vector2 = Vector2(300,100)
 @export var distKeepSize: Vector2 = Vector2(50,20)
+@export var offsetMin: Vector2 = Vector2(-50,-200)
+@export var offsetMax: Vector2 = Vector2(200,200)
 
 var targetOffset: Vector2 = Vector2.ZERO
 
@@ -31,7 +33,7 @@ func _ready():
 		behavior = randi_range(1, 2) if behavior == 0 else randi_range(0, 2)
 		
 		if behavior == 1:
-			targetOffset = Vector2(randi_range(-50,200),randi_range(-200,200))
+			targetOffset = Vector2(randi_range(offsetMin.x,offsetMax.x),randi_range(offsetMin.y,offsetMax.y))
 		
 		await get_tree().create_timer(randf_range(waitTimeRange.x,waitTimeRange.y)).timeout
 		
@@ -39,7 +41,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _AIProcess(delta):
 	playerModule.InputModule.movement = Vector2.ZERO
-	var closest = AIUtils.findClosestTarget()
+	var closest = AIUtils.findClosestTarget(this.get_node("EnemiesDetector").enemies)
 	if closest:
 		var posDist = abs(closest.position - this.position) 
 		match behavior:

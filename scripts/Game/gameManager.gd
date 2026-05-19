@@ -4,6 +4,11 @@ extends Node2D
 @export var PackedPlayers: Array[PackedScene] = []
 @export var SpawnPos: Array[Marker2D] = []
 
+@export_category("OnGameOver")
+@export var deathCheckTime: float = 1.5
+@export var MenuScreen: PackedScene
+
+
 @export_category("Debug")
 @export var ShowCollisions: bool
 @export var ShowHitboxes: bool
@@ -19,6 +24,12 @@ extends Node2D
 func _ready():
 	spawn_players()
 	start_game()
+	
+func _process(delta):
+	if $Players.get_child_count() == 0:
+		await get_tree().create_timer(deathCheckTime).timeout
+		if $Players.get_child_count() == 0:
+			get_tree().change_scene_to_packed(MenuScreen)
 
 func spawn_players():
 	var i: int = 0

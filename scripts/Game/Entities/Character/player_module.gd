@@ -77,17 +77,18 @@ func _process(delta):
 	var canMove: bool = StatusModule.canMove()
 	
 	if canMove:
-		MovementModule.setMovement(InputModule.movement, StatsModule.speed)
+		MovementModule.setInputMovement(InputModule.movement, StatsModule.speed)
 		
 		if InputModule.jumpKey and not StatusModule.onAir:
-			HeightModule.jump(StatsModule.jPower)
-		if StatusModule.onAir:
-			if InputModule.lightAttack and MovesetModule.airAttack:
-				MovesetModule.airAttack()
+			MovesetModule.jump()
 		else:
-			if InputModule.lightAttack and MovesetModule.lightAttack:
-				MovesetModule.lightAttack()
-			if InputModule.heavyAttack and MovesetModule.heavyAttack:
-				MovesetModule.heavyAttack()
+			if StatusModule.onAir:
+				if InputModule.lightAttack and MovesetModule.airAttack:
+					MovesetModule.airAttack()
+			else:
+				if InputModule.lightAttack and MovesetModule.lightAttack:
+					MovesetModule.lightAttack()
+				if InputModule.heavyAttack and MovesetModule.heavyAttack:
+					MovesetModule.heavyAttack()
 	else:
 		StatusModule.isMoving = false

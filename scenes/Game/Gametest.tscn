@@ -4,39 +4,97 @@
 [ext_resource type="PackedScene" uid="uid://bnc8tnds8ryqw" path="res://scenes/Game/UI/player_gui.tscn" id="2_kcqp7"]
 [ext_resource type="PackedScene" uid="uid://cn0nsbc6f1er4" path="res://scenes/Game/Entities/Player/DefaultPlayer.tscn" id="2_mhr4y"]
 [ext_resource type="PackedScene" uid="uid://dprhj58a0gbm2" path="res://scenes/Game/UI/UI.tscn" id="3_unq2p"]
+[ext_resource type="PackedScene" uid="uid://b1p4y5buvil5c" path="res://scenes/menu.tscn" id="4_i3iq3"]
 [ext_resource type="Script" uid="uid://bjremamuxi5vk" path="res://scripts/Game/Entities/Enemy/EnemySpawner_module.gd" id="4_koclg"]
 [ext_resource type="PackedScene" uid="uid://csu2xssxwqn4n" path="res://scenes/Game/Entities/Enemies/Grimp.tscn" id="4_sa5pu"]
 [ext_resource type="Texture2D" uid="uid://b4iybnsxsuru6" path="res://images/Map/MainStage Asset.png" id="5_koclg"]
-[ext_resource type="Script" path="res://scripts/Game/player_follower.gd" id="5_unq2p"]
+[ext_resource type="Script" uid="uid://kymh0tus5b24" path="res://scripts/Game/player_follower.gd" id="5_unq2p"]
 [ext_resource type="Texture2D" uid="uid://55whw6ky7rhx" path="res://images/Map/Background Basic Asset.png" id="6_2sju2"]
 [ext_resource type="Script" uid="uid://chelv8jhgtdu4" path="res://scripts/Game/events_detector.gd" id="6_crllf"]
 [ext_resource type="Script" uid="uid://cpffx88thlrv0" path="res://scripts/Game/playerAreaDetector.gd" id="6_edlo4"]
 [ext_resource type="PackedScene" uid="uid://di32326qpsycx" path="res://scenes/Game/Entities/Enemies/Pumpumf.tscn" id="6_ukl1v"]
 [ext_resource type="PackedScene" uid="uid://b0s4u1e4epkk" path="res://scenes/Game/Entities/Enemies/Flyby.tscn" id="7_46kam"]
-[ext_resource type="PackedScene" uid="uid://bg4staso4o4oe" path="res://scenes/pausa.tscn" id="14_54qml"]
-[ext_resource type="Texture2D" uid="uid://bsu16p4k2di5d" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Gear.svg" id="15_dm4mq"]
-[ext_resource type="Texture2D" uid="uid://bhkwk6vow0eud" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Pause.svg" id="16_bjgtw"]
-[ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="17_sets"]
-[ext_resource type="Script" uid="uid://spepxxdgiqyg" path="res://scripts/Game/UI/game_hud.gd" id="18_ghud"]
+[ext_resource type="PackedScene" uid="uid://iuv35gx70s04" path="res://scenes/Game/Entities/Enemies/Spiffer.tscn" id="8_54qml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crllf"]
 size = Vector2(128, 720)
 
-[node name="Game2" type="Node2D" unique_id=769547888 node_paths=PackedStringArray("SpawnPos")]
+[node name="Game" type="Node2D" unique_id=769547888 node_paths=PackedStringArray("SpawnPos")]
 y_sort_enabled = true
 script = ExtResource("1_mhr4y")
 PackedPlayerGUI = ExtResource("2_kcqp7")
 PackedPlayers = Array[PackedScene]([ExtResource("2_mhr4y")])
 SpawnPos = [NodePath("SpawnPos/P1"), NodePath("SpawnPos/P2"), NodePath("SpawnPos/P3"), NodePath("SpawnPos/P4")]
+MenuScreen = ExtResource("4_i3iq3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1110206721]
 position = Vector2(640, 360)
+
+[node name="EventsDetector" type="Node2D" parent="." unique_id=751690982 node_paths=PackedStringArray("waveEvents")]
+script = ExtResource("6_crllf")
+waveEvents = [NodePath("Area0"), NodePath("Area1"), NodePath("Area2"), NodePath("Area3"), NodePath("Area4"), NodePath("Area5"), NodePath("Area6")]
+
+[node name="Area0" type="Area2D" parent="EventsDetector" unique_id=618687373]
+position = Vector2(1408, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area0" unique_id=940528918]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area1" type="Area2D" parent="EventsDetector" unique_id=1414414942]
+position = Vector2(2456, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area1" unique_id=610897106]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area2" type="Area2D" parent="EventsDetector" unique_id=2132509691]
+position = Vector2(3672, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area2" unique_id=2053770802]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area3" type="Area2D" parent="EventsDetector" unique_id=852438193]
+position = Vector2(4824, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area3" unique_id=139451547]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area4" type="Area2D" parent="EventsDetector" unique_id=1398619713]
+position = Vector2(5896, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area4" unique_id=1689857544]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area5" type="Area2D" parent="EventsDetector" unique_id=1276166854]
+position = Vector2(7016, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area5" unique_id=1294992991]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
+
+[node name="Area6" type="Area2D" parent="EventsDetector" unique_id=950812590]
+position = Vector2(8080, 360)
+script = ExtResource("6_edlo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area6" unique_id=341692654]
+shape = SubResource("RectangleShape2D_crllf")
+debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=2062962674]
 z_index = 2
 y_sort_enabled = true
 script = ExtResource("4_koclg")
-enemies = Array[PackedScene]([ExtResource("4_sa5pu"), ExtResource("6_ukl1v"), ExtResource("7_46kam")])
+enemies = Array[PackedScene]([ExtResource("4_sa5pu"), ExtResource("6_ukl1v"), ExtResource("7_46kam"), ExtResource("8_54qml")])
 
 [node name="Players" type="Node2D" parent="." unique_id=1371707939]
 z_index = 2
@@ -71,8 +129,7 @@ texture = ExtResource("6_2sju2")
 [node name="Boundry" type="Area2D" parent="Map" unique_id=852656395]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Boundry" unique_id=259037805]
-position = Vector2(-8, 0)
-polygon = PackedVector2Array(4296, 384, 4296, 704, 24, 704, 24, 384)
+polygon = PackedVector2Array(9920, 384, 9920, 704, 48, 704, 48, 384)
 
 [node name="SpawnPos" type="Node2D" parent="." unique_id=710396889]
 
@@ -97,85 +154,12 @@ FollowingPlayerUI = [NodePath("../Ui")]
 [node name="CenterArea" type="Marker2D" parent="PlayerFollower" unique_id=317310174]
 position = Vector2(640, 360)
 
-[node name="EventsDetector" type="Node2D" parent="." unique_id=751690982 node_paths=PackedStringArray("waveEvents")]
-script = ExtResource("6_crllf")
-waveEvents = [NodePath("Area1"), NodePath("Area2"), NodePath("Area3")]
-
-[node name="Area1" type="Area2D" parent="EventsDetector" unique_id=1414414942]
-position = Vector2(1408, 360)
-script = ExtResource("6_edlo4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area1" unique_id=610897106]
-shape = SubResource("RectangleShape2D_crllf")
-debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
-
-[node name="Area2" type="Area2D" parent="EventsDetector" unique_id=2132509691]
-position = Vector2(2624, 360)
-script = ExtResource("6_edlo4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area2" unique_id=2053770802]
-shape = SubResource("RectangleShape2D_crllf")
-debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
-
-[node name="Area3" type="Area2D" parent="EventsDetector" unique_id=852438193]
-position = Vector2(2624, 360)
-script = ExtResource("6_edlo4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EventsDetector/Area3" unique_id=139451547]
-position = Vector2(896, 0)
-shape = SubResource("RectangleShape2D_crllf")
-debug_color = Color(0.8297021, 0, 0.18158725, 0.41960785)
-
 [node name="Ui" parent="." unique_id=1782285889 instance=ExtResource("3_unq2p")]
-mouse_filter = 2
 
-[node name="Pausa" parent="." unique_id=732700815 instance=ExtResource("14_54qml")]
-
-[node name="SettingsLayer" type="CanvasLayer" parent="." unique_id=908445966]
-process_mode = 3
-layer = 2
-
-[node name="Settings" parent="SettingsLayer" unique_id=1157954530 instance=ExtResource("17_sets")]
-process_mode = 3
-visible = false
-
-[node name="GameHUD" type="CanvasLayer" parent="." unique_id=1214847952]
-process_mode = 3
-script = ExtResource("18_ghud")
-
-[node name="HUDControl" type="Control" parent="GameHUD" unique_id=515265659]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="SettingsButton" type="Button" parent="GameHUD/HUDControl" unique_id=1868079787]
-layout_mode = 1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 72.0
-icon = ExtResource("15_dm4mq")
-flat = true
-
-[node name="PauseButton" type="Button" parent="GameHUD/HUDControl" unique_id=680506058]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -72.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 72.0
-grow_horizontal = 0
-icon = ExtResource("16_bjgtw")
-flat = true
-
+[connection signal="body_entered" from="EventsDetector/Area0" to="EventsDetector/Area0" method="_on_body_entered"]
 [connection signal="body_entered" from="EventsDetector/Area1" to="EventsDetector/Area1" method="_on_body_entered"]
 [connection signal="body_entered" from="EventsDetector/Area2" to="EventsDetector/Area2" method="_on_body_entered"]
 [connection signal="body_entered" from="EventsDetector/Area3" to="EventsDetector/Area3" method="_on_body_entered"]
-[connection signal="pressed" from="GameHUD/HUDControl/SettingsButton" to="GameHUD" method="_on_settings_button_pressed"]
-[connection signal="pressed" from="GameHUD/HUDControl/PauseButton" to="GameHUD" method="_on_pause_button_pressed"]
+[connection signal="body_entered" from="EventsDetector/Area4" to="EventsDetector/Area4" method="_on_body_entered"]
+[connection signal="body_entered" from="EventsDetector/Area5" to="EventsDetector/Area5" method="_on_body_entered"]
+[connection signal="body_entered" from="EventsDetector/Area6" to="EventsDetector/Area6" method="_on_body_entered"]

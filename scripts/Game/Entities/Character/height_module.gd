@@ -23,7 +23,7 @@ func _heightProcess(delta):
 #####                             Functions                                #####
 ################################################################################
 
-func jump(jPower: float):
+func setHeightSpeed(jPower: float):
 	if height <= 0:
 		height += 1
 	heightSpeed = jPower
@@ -37,7 +37,7 @@ func addHeight(newHeight: float):
 	setHeight(newHeight-height)
 
 func addHeightSpeed(newHeightSpeed: float):
-	jump(newHeightSpeed+heightSpeed)
+	setHeightSpeed(newHeightSpeed+heightSpeed)
 	
 ################################################################################
 #####                              Utility                                 #####

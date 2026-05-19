@@ -37,7 +37,7 @@ func _movementProcess(delta):
 #####                             Functions                                #####
 ################################################################################
 
-func setMovement(movement: Vector2, speed: Vector2):
+func setInputMovement(movement: Vector2, speed: Vector2):
 	if movement != Vector2.ZERO:
 		playerModule.StatusModule.isMoving = true
 		if movement.x < 0:
@@ -47,8 +47,34 @@ func setMovement(movement: Vector2, speed: Vector2):
 		moveTo(Vector2(movement.x * speed.x, movement.y * speed.y), speed)
 	elif not playerModule.StatusModule.onAir: 
 		playerModule.StatusModule.isMoving = false
+		
+func addMovement(movement: Vector2):
+	setMovement(movement + character.velocity)
+	
+func setMovement(movement: Vector2):
+	character.velocity = movement
+	
+func applyForce(force: Vector2, newHeightSpeed: float):
+	addMovement(force)
+	playerModule.HeightModule.addHeightSpeed(newHeightSpeed)
+	if newHeightSpeed != 0:
+		playerModule.StatusModule.isMoving = true
 
-func moveTo(movement: Vector2, maxSpeed: Vector2):
+func applyForceV3(force: Vector3):
+	applyForce(Vector2(force.x,force.z), force.y)
+
+func setForce(force: Vector2, newHeightSpeed: float):
+	applyForce(force-character.velocity, newHeightSpeed-playerModule.HeightModule.heightSpeed)
+
+func setForceV3(force: Vector3):
+	setForce(Vector2(force.x,force.z), force.y)
+	
+
+################################################################################
+#####                              Utility                                 #####
+################################################################################
+
+func moveTo(movement: Vector2, maxSpeed: Vector2 = Vector2(10000,10000)):
 	moveXTo(movement.x, maxSpeed.x)
 	moveYTo(movement.y, maxSpeed.y)
 
@@ -63,27 +89,6 @@ func moveYTo(movementY: float, maxSpeedY: float):
 		character.velocity.y = max(-maxSpeedY,min(maxSpeedY,movementY/10+character.velocity.y))
 	else:
 		character.velocity.y = movementY
-	
-func applyForce(force: Vector2, height: float):
-	character.velocity.x += force.x
-	character.velocity.y += force.y
-	playerModule.HeightModule.addHeightSpeed(height)
-	if height != 0:
-		playerModule.StatusModule.isMoving = true
-
-func applyForceV3(force: Vector3):
-	applyForce(Vector2(force.x,force.z), force.y)
-
-func setForce(force: Vector2, height: float):
-	applyForce(force-character.velocity, height)
-
-func setForceV3(force: Vector3):
-	setForce(Vector2(force.x,force.z), force.y)
-	
-
-################################################################################
-#####                              Utility                                 #####
-################################################################################
 
 func snapInsidePolygon():
 	# If inside, distance is zero

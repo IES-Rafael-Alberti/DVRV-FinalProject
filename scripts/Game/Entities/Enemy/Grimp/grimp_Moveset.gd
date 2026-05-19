@@ -1,6 +1,5 @@
 extends Node
 
-@export var hitboxPacked: PackedScene
 @onready var player: Node = get_parent()
 @onready var playerModule: Node = get_parent().PlayerModule
 @onready var movesetUtils: Node = $MovesetUtils
@@ -24,17 +23,24 @@ extends Node
 @export var MeDebounceTime: float = 0.2
 @export var MeAnim: Array[String] = ["AtkSLag", "Atk"]
 @export var MeResetTime: float = 1.0
-var HANumber: int = 0
+var MeNumber: int = 0
 
 func _initialized():
 	playerModule = get_parent().PlayerModule
 
 ################################################################################
-#####                             Functions                                #####
+#####                             Movement                                 #####
+################################################################################
+
+func jump():
+	movesetUtils.defaultJump()
+
+################################################################################
+#####                              Attacks                                 #####
 ################################################################################
 
 func lightAttack():
-	if 1 <= HANumber: return
+	if 1 <= MeNumber: return
 	
 	var lookDir = playerModule.StatusModule.lookDir
 	
@@ -46,14 +52,23 @@ func lightAttack():
 	
 	playerModule.MovementModule.applyForceV3(MePlayerMovement*Vector3(lookDir,1,1))
 	
-	movesetUtils.spawnHitbox(lookDir, MeHitboxOffset, MeHitboxintMovementDir, MeHitboxAccelerationDir, MeHitboxSize, MeHitboxLifetime, MeDamage, MeStuntime, MeKnockback)
+	movesetUtils.spawnHitbox(
+		lookDir, 
+		MeHitboxOffset, 
+		MeHitboxintMovementDir, 
+		MeHitboxAccelerationDir, 
+		MeHitboxSize, 
+		MeHitboxLifetime, 
+		MeDamage, 
+		MeStuntime, 
+		MeKnockback)
 	
-	HANumber += 1
-	var befAtkN = HANumber
+	MeNumber += 1
+	var befAtkN = MeNumber
 	await get_tree().create_timer(MeDebounceTime).timeout
 	if !playerModule.StatusModule.isStunned:
 		playerModule.AnimModule.resetAnim()
 	
 	await get_tree().create_timer(MeResetTime).timeout
-	if befAtkN == HANumber:
-		HANumber = 0
+	if befAtkN == MeNumber:
+		MeNumber = 0

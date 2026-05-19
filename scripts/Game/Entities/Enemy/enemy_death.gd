@@ -1,14 +1,15 @@
 extends Node
 
-@export var deathTime: float = 2
-@export var despawnTime: float = 1
+@export var deathTime: float = 1
+@export var despawnTime: float = 0
+@export var deathAnim: StringName = "Knockback"
 
 func onDeath(this: CharacterBody2D):
 	var playerModule = this.PlayerModule
 
 	this.remove_from_group("Entity")
 	playerModule.StatusModule.applyStun(10000)
-	playerModule.AnimModule.forceAnim("Knockback")
+	playerModule.AnimModule.forceAnim(deathAnim)
 	await get_tree().create_timer(deathTime).timeout
 	despawnAnim(this)
 	await get_tree().create_timer(despawnTime).timeout

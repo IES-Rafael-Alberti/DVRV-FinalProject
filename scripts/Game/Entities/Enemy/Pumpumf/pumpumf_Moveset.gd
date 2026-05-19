@@ -1,6 +1,5 @@
 extends Node
 
-@export var hitboxPacked: PackedScene
 @onready var player: Node = get_parent()
 @onready var playerModule: Node = get_parent().PlayerModule
 @onready var movesetUtils: Node = $MovesetUtils
@@ -68,7 +67,14 @@ func _initialized():
 	playerModule = get_parent().PlayerModule
 
 ################################################################################
-#####                             Functions                                #####
+#####                             Movement                                 #####
+################################################################################
+
+func jump():
+	movesetUtils.defaultJump()
+
+################################################################################
+#####                              Attacks                                 #####
 ################################################################################
 
 func lightAttack():

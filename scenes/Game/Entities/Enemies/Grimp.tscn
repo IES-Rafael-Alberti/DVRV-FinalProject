@@ -6,11 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="3_a0lmu"]
 [ext_resource type="Script" uid="uid://873jsag3lu2i" path="res://scripts/Game/Entities/Enemy/Grimp/grimp_AI.gd" id="3_pn36o"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_ppu6s"]
+[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="6_s4n51"]
 [ext_resource type="Script" uid="uid://clkkjr4bwsqf1" path="res://scripts/Game/Entities/Enemy/AI_Utilities.gd" id="6_y0wt5"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="8_mr4d4"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="13_38mpw"]
 [ext_resource type="Texture2D" uid="uid://de8xycmp1afo4" path="res://images/Entities/shadow.png" id="14_6ns33"]
 [ext_resource type="Texture2D" uid="uid://j31rhltj355y" path="res://images/Entities/Enemies/Grimp Spritesheet.png" id="15_pn36o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2c38"]
+radius = 1286.384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbf47"]
 radius = 2000.0
@@ -183,7 +187,7 @@ states/Up/position = Vector2(297, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace1D_wklcl")
 states/Walk/position = Vector2(633, -29)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_00enb"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_jpqlp"), "Stun", "Knockback", SubResource("AnimationNodeStateMachineTransition_dt5te"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_by3ly"), "Knockback", "Downed", SubResource("AnimationNodeStateMachineTransition_6x8u5"), "Downed", "Up", SubResource("AnimationNodeStateMachineTransition_msu2m"), "Up", "Idle", SubResource("AnimationNodeStateMachineTransition_swtt5"), "Downed", "Knockback", SubResource("AnimationNodeStateMachineTransition_2n6nx"), "Stun", "Idle", SubResource("AnimationNodeStateMachineTransition_d7n1s")]
-graph_offset = Vector2(-140, -276)
+graph_offset = Vector2(-127, -265)
 
 [sub_resource type="Animation" id="Animation_ynu68"]
 resource_name = "AtkLeft"
@@ -1500,11 +1504,17 @@ script = ExtResource("2_00ayx")
 
 [node name="GrimpMoveset" type="Node" parent="." unique_id=716930840]
 script = ExtResource("2_fy6og")
-hitboxPacked = ExtResource("3_a0lmu")
 
 [node name="MovesetUtils" type="Node" parent="GrimpMoveset" unique_id=2037218752]
 script = ExtResource("5_ppu6s")
 hitboxPacked = ExtResource("3_a0lmu")
+
+[node name="EnemiesDetector" type="Area2D" parent="." unique_id=1504610172]
+script = ExtResource("6_s4n51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesDetector" unique_id=379092175]
+shape = SubResource("CircleShape2D_l2c38")
+debug_color = Color(0.62, 0.41333336, 0, 0.039215688)
 
 [node name="AIModule" type="Node2D" parent="." unique_id=376197860]
 script = ExtResource("3_pn36o")
@@ -1579,5 +1589,7 @@ parameters/Walk/blend_position = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1211913936]
 libraries/ = SubResource("AnimationLibrary_y0wt5")
 
+[connection signal="body_entered" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_exited"]
 [connection signal="body_entered" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_entered"]
 [connection signal="body_exited" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_exited"]

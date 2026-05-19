@@ -9,7 +9,7 @@ extends Node
 ################################################################################
 
 func lookPlayer(target: CharacterBody2D):
-	if !playerModule.StatusModule.isStunned:
+	if !playerModule.StatusModule.isStunned and target:
 		if target.position.x > this.position.x:
 			playerModule.StatusModule.setLookDir(1)
 		elif target.position.x < this.position.x:
@@ -47,11 +47,17 @@ func moveSameVertical(target: int):
 			playerModule.InputModule.movement.y = 1 if enemyDir > 0 else -1
 			
 	pass
-
+	
 ################################################################################
 #####                              Attacks                                 #####
 ################################################################################
 
+func useJump():
+	if playerModule.InputModule.jumpKey == false:
+		playerModule.InputModule.jumpKey = true
+		await waitTime(0.1)
+		playerModule.InputModule.jumpKey = false
+		
 func useLightAttack():
 	if playerModule.InputModule.lightAttack == false:
 		playerModule.InputModule.lightAttack = true
@@ -68,11 +74,11 @@ func useHeavyAttack():
 #####                              Others                                 #####
 ################################################################################
 
-func findClosestTarget():
+func findClosestTarget(targets: Array[CharacterBody2D]):
 	var closest: Node2D = null
 	var closest_pos := INF
 	
-	for target in thisAI.targets:
+	for target in targets:
 		if target == null: continue
 		
 		var dist: float = this.position.distance_squared_to(target.global_position)
@@ -91,11 +97,3 @@ func waitTime(time: float):
 ################################################################################
 #####                              Signals                                 #####
 ################################################################################
-
-func _on_ai_range_body_entered(body):
-	if body.is_in_group("Player"):
-		thisAI.targets.append(body)
-
-func _on_ai_range_body_exited(body):
-	if body.is_in_group("Player"):
-		thisAI.targets.erase(body)

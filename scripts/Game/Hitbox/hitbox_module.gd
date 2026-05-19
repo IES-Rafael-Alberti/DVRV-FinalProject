@@ -1,11 +1,10 @@
 extends Node
 
 @export var this: Area2D = get_parent()
-@onready var thisOwner: CharacterBody2D = this.get_parent()
+@onready var thisOwner: CharacterBody2D
 
 @export_category("Values")
 @export var damage: int
-@export var height: int
 @export var stuntime: float
 @export var knockback: Vector3
 @export var targetsAmount: int = 500
@@ -13,41 +12,38 @@ extends Node
 @export var callOnHit: String
 @export var followHeight: bool
 
+@export var disabled: float = false
 var inside: Array[CharacterBody2D] = []
 var hitted: Array[CharacterBody2D] = []
 var newHeight: float = 0
 
-func _ready():
-	this.body_entered.connect(_on_body_entered)
-	this.body_exited.connect(_on_body_exit)
-
 func _process(delta):
-	newHeight = height
-	if followHeight:
-		newHeight += thisOwner.PlayerModule.HeightModule.height
+	newHeight = this.HitboxMovementModule.height
+	newHeight += thisOwner.PlayerModule.HeightModule.height
 	for target in inside:
 		if isTrulyIn(target) and not hitted.has(target):
-			target.PlayerModule.DamageModule.takeDamage(damage,stuntime,knockback)
+			target.PlayerModule.DamageModule.takeDamage(damage,stuntime,knockback*Vector3(this.lookDir,1,1))
 			if Callable(this, callOnHit):
 				Callable(this, callOnHit).call()
 			hitted.append(target)
 			inside.erase(target)
 			if hitted.size() >= targetsAmount:
-				get_parent().queue_free()
+				this.LifetimeModule.setDespawnPhase()
 
 ################################################################################
 #####                              Utility                                 #####
 ################################################################################
 
 func isTrulyIn(body):
-	var thisRadius = this.get_node("CollisionShape2D").shape.radius * this.scale.y
+	var thisHitbox = this.get_node("CollisionShape2D")
+	var thisRadius = thisHitbox.shape.radius * this.scale.y
+	var hitboxYDist = thisHitbox.global_position.y - body.global_position.y
 	var bodyHeight = body.PlayerModule.HeightModule.height
 	var bodyRadius = body.CollisionBox.shape.radius
-	var bodyColPosY = body.CollisionBox.global_position + Vector2(0,bodyHeight)
-	#print(bodyHeight+bodyRadius, " + ", newHeight - thisRadius, "  -  ", bodyHeight-bodyRadius, " + ", newHeight + thisRadius)
-	if bodyHeight >= newHeight - thisRadius and bodyHeight <= newHeight + thisRadius:
-		if bodyColPosY.distance_to(this.global_position + Vector2(0,bodyHeight)) <= thisRadius + bodyRadius:
-			return true
+	var bodyColPosY = body.CollisionBox.position.y
+	
+	if bodyHeight + bodyRadius + hitboxYDist - bodyColPosY >= newHeight - thisRadius and bodyHeight - bodyRadius + hitboxYDist - bodyColPosY <= newHeight + thisRadius:
+		return true
 	return false
 
 func isEnemy(body):
@@ -63,7 +59,7 @@ func isEnemy(body):
 ################################################################################
 
 func _on_body_entered(body):
-	if body.is_in_group("Entity") and isEnemy(body): 
+	if not disabled and body.is_in_group("Entity") and isEnemy(body): 
 		inside.append(body)
 
 func _on_body_exit(body):

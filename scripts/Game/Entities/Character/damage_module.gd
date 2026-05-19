@@ -8,8 +8,11 @@ extends Node
 ################################################################################
 
 func takeDamage(damage: int, stundur: float, knockback: Vector3):
+	if !playerModule.StatusModule.canBeDamaged:
+		return
 	playerModule.StatsModule.health -= damage
-	playerModule.StatusModule.applyStun(0.01 + stundur)
+	var stunTime = 0 if playerModule.StatsModule.ignoresStun else 0.01 + stundur if !playerModule.StatsModule.ignoresKnockback else min(0.3,0.01 + stundur)
+	playerModule.StatusModule.applyStun(stunTime)
 	playerModule.AnimModule.forceAnim("Stun")
 	applyKnockback(knockback)
 	

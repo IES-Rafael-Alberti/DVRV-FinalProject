@@ -6,11 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="4_3b4iv"]
 [ext_resource type="Script" uid="uid://bxovv4m35we40" path="res://scripts/Game/Entities/Enemy/Pumpumf/pumpumf_AI.gd" id="5_ecl5d"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_gv3ce"]
+[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="6_lvg73"]
 [ext_resource type="Script" uid="uid://clkkjr4bwsqf1" path="res://scripts/Game/Entities/Enemy/AI_Utilities.gd" id="6_mtgve"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="8_wbeby"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="14_oabrq"]
 [ext_resource type="Texture2D" uid="uid://de8xycmp1afo4" path="res://images/Entities/shadow.png" id="15_6sufx"]
 [ext_resource type="Texture2D" uid="uid://cy54bepm6txdu" path="res://images/Entities/Enemies/Pumpumf Spritesheet.png" id="16_ecl5d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrtx0"]
+radius = 1286.384
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nbf47"]
 radius = 2000.0
@@ -2388,11 +2392,17 @@ script = ExtResource("2_mtgve")
 
 [node name="PumppufMoveset" type="Node" parent="." unique_id=869671624]
 script = ExtResource("3_gmxhq")
-hitboxPacked = ExtResource("4_3b4iv")
 
 [node name="MovesetUtils" type="Node" parent="PumppufMoveset" unique_id=377202206]
 script = ExtResource("5_gv3ce")
 hitboxPacked = ExtResource("4_3b4iv")
+
+[node name="EnemiesDetector" type="Area2D" parent="." unique_id=1722563743]
+script = ExtResource("6_lvg73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemiesDetector" unique_id=1058014683]
+shape = SubResource("CircleShape2D_jrtx0")
+debug_color = Color(0.62, 0.41333336, 0, 0.039215688)
 
 [node name="AIModule" type="Node2D" parent="." unique_id=1082707025]
 script = ExtResource("5_ecl5d")
@@ -2472,5 +2482,7 @@ parameters/Walk/blend_position = 0.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=2120071731]
 libraries/ = SubResource("AnimationLibrary_3b4iv")
 
+[connection signal="body_entered" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_entered"]
+[connection signal="body_exited" from="EnemiesDetector" to="EnemiesDetector" method="_on_body_exited"]
 [connection signal="body_entered" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_entered"]
 [connection signal="body_exited" from="AIModule/AiRange" to="AIModule/AIUtils" method="_on_ai_range_body_exited"]
