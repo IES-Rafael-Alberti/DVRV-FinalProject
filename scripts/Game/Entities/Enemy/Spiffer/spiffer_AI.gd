@@ -36,7 +36,6 @@ func _AIProcess(delta):
 	playerModule.InputModule.movement = Vector2.ZERO
 	var closest = AIUtils.findClosestTarget(this.get_node("EnemiesDetector").enemies)
 	AIUtils.lookPlayer(closest)
-	print(behavior)
 	if isBusy: return
 	isBusy = true
 	if closest: 
