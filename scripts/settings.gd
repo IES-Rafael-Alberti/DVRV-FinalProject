@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 
 func _load_last_tab() -> void:
-	var tab_container = get_node_or_null("MarginContainer/TabContainer")
+	var tab_container = get_node_or_null("Center/SettingsPanel/MainVB/BodyMargin/TabContainer")
 	if tab_container:
 		var last_tab: int = get_node("/root/ConfigManager").get_setting("settings", "last_tab", 0)
 		tab_container.current_tab = last_tab
@@ -57,4 +57,12 @@ func _on_button_pressed() -> void:
 
 
 func _on_option_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_gear_btn_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_back_button_pressed() -> void:
 	pass # Replace with function body.

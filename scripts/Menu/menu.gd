@@ -29,3 +29,7 @@ func _on_exit_button_pressed() -> void:
 
 func _on_option_button_pressed() -> void:
 	settings.visible = true
+
+
+func _on_gear_btn_pressed() -> void:
+	pass # Replace with function body.

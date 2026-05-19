@@ -1,0 +1,1289 @@
+[gd_scene format=3 uid="uid://bnb68a7pqbe53"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.831, 0.659, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.435, 0.624, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 8
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4"]
+content_margin_left = 36.0
+content_margin_top = 20.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.435, 0.624, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.435, 0.624, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.831, 0.659, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 8
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7"]
+content_margin_left = 36.0
+content_margin_top = 20.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.831, 0.659, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.831, 0.659, 0.227, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.769, 0.416, 0.416, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 8
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10"]
+content_margin_left = 36.0
+content_margin_top = 20.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.769, 0.416, 0.416, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_9"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.769, 0.416, 0.416, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.239, 0.357, 0.165, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13"]
+content_margin_left = 22.0
+content_margin_top = 12.0
+content_margin_right = 22.0
+content_margin_bottom = 16.0
+bg_color = Color(0.176, 0.259, 0.125, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14"]
+content_margin_left = 22.0
+content_margin_top = 12.0
+content_margin_right = 22.0
+content_margin_bottom = 16.0
+bg_color = Color(0.227, 0.157, 0.094, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12"]
+content_margin_left = 28.0
+content_margin_top = 26.0
+content_margin_right = 28.0
+content_margin_bottom = 26.0
+bg_color = Color(0.176, 0.259, 0.125, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.957, 0.918, 0.824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+bg_color = Color(0.957, 0.918, 0.824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20"]
+content_margin_left = 6.0
+content_margin_top = 0.0
+content_margin_right = 6.0
+content_margin_bottom = 0.0
+bg_color = Color(0.941, 0.784, 0.314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15"]
+content_margin_left = 12.0
+content_margin_top = 0.0
+content_margin_right = 12.0
+content_margin_bottom = 0.0
+bg_color = Color(0.957, 0.918, 0.824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17"]
+content_margin_left = 28.0
+content_margin_top = 28.0
+content_margin_right = 28.0
+content_margin_bottom = 28.0
+bg_color = Color(0.239, 0.357, 0.165, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.957, 0.918, 0.824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_19"]
+content_margin_left = 36.0
+content_margin_top = 14.0
+content_margin_right = 36.0
+content_margin_bottom = 14.0
+bg_color = Color(0.769, 0.416, 0.416, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
+
+[node name="MainMenu" type="Control" unique_id=909610923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SwampBG" type="Control" parent="." unique_id=642416843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GearBtn" type="Button" parent="." unique_id=391413995]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 84.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1")
+text = "⚙"
+
+[node name="Version" type="Label" parent="." unique_id=1805487293]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 32.0
+offset_right = -32.0
+grow_horizontal = 0
+text = "V 0.1.0 · GODOT 4"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="CenterMargin" type="MarginContainer" parent="." unique_id=1430273249]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="CenterStack" type="CenterContainer" parent="CenterMargin" unique_id=350732250]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LogoAndButtons" type="VBoxContainer" parent="CenterMargin/CenterStack" unique_id=316535183]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Logo" type="VBoxContainer" parent="CenterMargin/CenterStack/LogoAndButtons" unique_id=1473270796]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -6
+alignment = 1
+
+[node name="LblSubtitle" type="Label" parent="CenterMargin/CenterStack/LogoAndButtons/Logo" unique_id=2031705577]
+unique_name_in_owner = true
+layout_mode = 2
+text = "~ una aventura en el pantano ~"
+horizontal_alignment = 1
+
+[node name="LblSpores" type="Label" parent="CenterMargin/CenterStack/LogoAndButtons/Logo" unique_id=1465260294]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SPORES"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LblAnd" type="Label" parent="CenterMargin/CenterStack/LogoAndButtons/Logo" unique_id=250394758]
+unique_name_in_owner = true
+layout_mode = 2
+text = "AND"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LblDreams" type="Label" parent="CenterMargin/CenterStack/LogoAndButtons/Logo" unique_id=673889099]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DREAMS"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Spacer" type="Control" parent="CenterMargin/CenterStack/LogoAndButtons" unique_id=1179630525]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="CenterMargin/CenterStack/LogoAndButtons" unique_id=1702426600]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="BtnPlay" type="Button" parent="CenterMargin/CenterStack/LogoAndButtons/Buttons" unique_id=711156575]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_colors/font_pressed_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_colors/font_hover_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_colors/font_outline_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3")
+text = "▶  PLAY"
+
+[node name="BtnCredit" type="Button" parent="CenterMargin/CenterStack/LogoAndButtons/Buttons" unique_id=456495398]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_colors/font_pressed_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_colors/font_hover_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6")
+text = "CREDIT"
+
+[node name="BtnExit" type="Button" parent="CenterMargin/CenterStack/LogoAndButtons/Buttons" unique_id=1977847623]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_colors/font_pressed_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_colors/font_hover_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_colors/font_outline_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_10")
+theme_override_styles/hover = SubResource("StyleBoxFlat_9")
+text = "EXIT"
+
+[node name="Mascot" type="Control" parent="." unique_id=594793052]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -200.0
+offset_right = 172.0
+offset_bottom = -40.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="MascotLabel" type="Label" parent="." unique_id=138832982]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -36.0
+offset_bottom = -12.0
+grow_vertical = 0
+rotation = -0.052
+text = "Hongo, héroe"
+
+[node name="HotkeyStrip" type="Label" parent="." unique_id=732608886]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[↑↓] NAVEGAR    [ENTER] ELEGIR    [ESC] ATRÁS"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SettingsOverlay" type="Control" parent="." unique_id=1612835857]
+unique_name_in_owner = true
+z_index = 60
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="SettingsOverlay" unique_id=358024338]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.05, 0.03, 0.7)
+
+[node name="Center" type="CenterContainer" parent="SettingsOverlay" unique_id=1218693144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SettingsPanel" type="PanelContainer" parent="SettingsOverlay/Center" unique_id=1492752662]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(880, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_11")
+
+[node name="MainVB" type="VBoxContainer" parent="SettingsOverlay/Center/SettingsPanel" unique_id=2015320341]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TabHeader" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB" unique_id=1561202487]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BackBtn" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/TabHeader" unique_id=1084436597]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1")
+text = "◀"
+
+[node name="TabSound" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/TabHeader" unique_id=2077106570]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_13")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_13")
+theme_override_styles/hover = SubResource("StyleBoxFlat_13")
+text = "🔊 SONIDO"
+
+[node name="TabLang" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/TabHeader" unique_id=121699495]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_14")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14")
+text = "🌐 IDIOMA"
+
+[node name="TabCtrl" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/TabHeader" unique_id=1469075709]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_14")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14")
+text = "🎮 CONTROLES"
+
+[node name="BodyMargin" type="MarginContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB" unique_id=89869200]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 22
+
+[node name="Body" type="PanelContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin" unique_id=998138576]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_12")
+
+[node name="PageSound" type="VBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body" unique_id=738644226]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="RowMaster" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound" unique_id=85407124]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LblTodo" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMaster" unique_id=261946033]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "TODO"
+uppercase = true
+
+[node name="Minus_master" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMaster" unique_id=1858630678]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "−"
+
+[node name="SliderMaster" type="HSlider" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMaster" unique_id=1754601573]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+step = 10.0
+value = 80.0
+
+[node name="Plus_master" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMaster" unique_id=600012462]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "+"
+
+[node name="ValMaster" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMaster" unique_id=569080404]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "80"
+horizontal_alignment = 2
+
+[node name="RowMusic" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound" unique_id=443650714]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LblMusica" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMusic" unique_id=1455893578]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "MÚSICA"
+
+[node name="Minus_music" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMusic" unique_id=323396171]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "−"
+
+[node name="SliderMusic" type="HSlider" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMusic" unique_id=209681947]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+step = 10.0
+value = 60.0
+
+[node name="Plus_music" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMusic" unique_id=642712787]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "+"
+
+[node name="ValMusic" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowMusic" unique_id=14810787]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "60"
+horizontal_alignment = 2
+
+[node name="RowSFX" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound" unique_id=1816584638]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LblSFX" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowSFX" unique_id=1203189343]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "SFX"
+
+[node name="Minus_sfx" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowSFX" unique_id=865367931]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "−"
+
+[node name="SliderSFX" type="HSlider" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowSFX" unique_id=1804037769]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+step = 10.0
+value = 70.0
+
+[node name="Plus_sfx" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowSFX" unique_id=783015218]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "+"
+
+[node name="ValSFX" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowSFX" unique_id=1963316855]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "70"
+horizontal_alignment = 2
+
+[node name="RowAmb" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound" unique_id=614346819]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LblAmbiente" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowAmb" unique_id=744914180]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "AMBIENTE"
+
+[node name="Minus_ambient" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowAmb" unique_id=2142524200]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "−"
+
+[node name="SliderAmb" type="HSlider" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowAmb" unique_id=797928731]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+step = 10.0
+value = 50.0
+
+[node name="Plus_ambient" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowAmb" unique_id=977548524]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_16")
+text = "+"
+
+[node name="ValAmb" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageSound/RowAmb" unique_id=1444977190]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "50"
+horizontal_alignment = 2
+
+[node name="PageLang" type="VBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body" unique_id=1347613774]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LblEligeIdioma" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageLang" unique_id=1426786904]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Elige tu idioma →"
+
+[node name="LangES" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageLang" unique_id=1786773287]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_31")
+text = "  ●  ESPAÑOL          ES"
+alignment = 0
+
+[node name="LangEN" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageLang" unique_id=423987680]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_32")
+text = "  ○  INGLÉS          EN"
+alignment = 0
+
+[node name="LangPT" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageLang" unique_id=369501685]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_32")
+text = "  ○  PORTUGUÉS          PT"
+alignment = 0
+
+[node name="LangFR" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageLang" unique_id=186740877]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_32")
+text = "  ○  FRANCÉS          FR"
+alignment = 0
+
+[node name="PageCtrl" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body" unique_id=1360908114]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="ColMove" type="VBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl" unique_id=1913872508]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="TitleMovimiento" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove" unique_id=1186865935]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MOVIMIENTO"
+uppercase = true
+
+[node name="RowUp" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove" unique_id=341083384]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphUp" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowUp" unique_id=239155266]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "↑"
+
+[node name="LblUp" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowUp" unique_id=86618218]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ARRIBA"
+uppercase = true
+
+[node name="KeyUp" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowUp" unique_id=309967449]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "W"
+
+[node name="RowRight" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove" unique_id=612465779]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphRight" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowRight" unique_id=1769917189]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "→"
+
+[node name="LblRight" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowRight" unique_id=138469456]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "DERECHA"
+
+[node name="KeyRight" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowRight" unique_id=629508235]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "D"
+
+[node name="RowDown" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove" unique_id=1793365439]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphDown" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowDown" unique_id=1848487410]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "↓"
+
+[node name="LblDown" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowDown" unique_id=1785654571]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ABAJO"
+
+[node name="KeyDown" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowDown" unique_id=560634284]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "S"
+
+[node name="RowLeft" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove" unique_id=1750945215]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphLeft" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowLeft" unique_id=1114084218]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "←"
+
+[node name="LblLeft" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowLeft" unique_id=1888059176]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "IZQUIERDA"
+
+[node name="KeyLeft" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColMove/RowLeft" unique_id=2025828101]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "A"
+
+[node name="ColAttack" type="VBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl" unique_id=381326829]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="TitleAtaques" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack" unique_id=1255782648]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ATAQUES"
+uppercase = true
+
+[node name="RowB1" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack" unique_id=1972710499]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB1" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB1" unique_id=531035852]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "B1"
+
+[node name="LblB1" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB1" unique_id=680261159]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "GOLPE LIGERO"
+
+[node name="KeyB1" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB1" unique_id=1969289823]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "J"
+
+[node name="RowB2" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack" unique_id=472599]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB2" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB2" unique_id=756599561]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "B2"
+
+[node name="LblB2" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB2" unique_id=1201359315]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "GOLPE FUERTE"
+
+[node name="KeyB2" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB2" unique_id=1754488216]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "K"
+
+[node name="RowB3" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack" unique_id=1444145887]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB3" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB3" unique_id=1529775876]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "B3"
+
+[node name="LblB3" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB3" unique_id=1957974947]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "SALTO"
+
+[node name="KeyB3" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB3" unique_id=965875770]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "SPACE"
+
+[node name="RowB4" type="HBoxContainer" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack" unique_id=1567463257]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB4" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB4" unique_id=1645129740]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_20")
+disabled = true
+text = "B4"
+
+[node name="LblB4" type="Label" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB4" unique_id=1362470724]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ESPECIAL"
+
+[node name="KeyB4" type="Button" parent="SettingsOverlay/Center/SettingsPanel/MainVB/BodyMargin/Body/PageCtrl/ColAttack/RowB4" unique_id=48250977]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_15")
+text = "L"
+
+[node name="ExitDialog" type="Control" parent="." unique_id=423057998]
+unique_name_in_owner = true
+visible = false
+z_index = 80
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EDDimmer" type="ColorRect" parent="ExitDialog" unique_id=22797424]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.05, 0.03, 0.7)
+
+[node name="EDCenter" type="CenterContainer" parent="ExitDialog" unique_id=1519262146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EDPanel" type="PanelContainer" parent="ExitDialog/EDCenter" unique_id=168128145]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_17")
+
+[node name="VB" type="VBoxContainer" parent="ExitDialog/EDCenter/EDPanel" unique_id=2006410524]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="EDTitle" type="Label" parent="ExitDialog/EDCenter/EDPanel/VB" unique_id=1877731833]
+unique_name_in_owner = true
+layout_mode = 2
+text = "¿CERRAR EL JUEGO?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="EDSubtitle" type="Label" parent="ExitDialog/EDCenter/EDPanel/VB" unique_id=1056785592]
+unique_name_in_owner = true
+layout_mode = 2
+text = "las setas te van a echar de menos…"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="ExitDialog/EDCenter/EDPanel/VB" unique_id=804758362]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="BtnRow" type="HBoxContainer" parent="ExitDialog/EDCenter/EDPanel/VB" unique_id=1767042125]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="BtnStay" type="Button" parent="ExitDialog/EDCenter/EDPanel/VB/BtnRow" unique_id=587043232]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_18")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_18")
+theme_override_styles/hover = SubResource("StyleBoxFlat_18")
+text = "QUEDARSE"
+
+[node name="BtnQuit" type="Button" parent="ExitDialog/EDCenter/EDPanel/VB/BtnRow" unique_id=2054166895]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_19")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_19")
+theme_override_styles/hover = SubResource("StyleBoxFlat_19")
+text = "SALIR"

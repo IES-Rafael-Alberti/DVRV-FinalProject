@@ -1,6 +1,60 @@
 [gd_scene format=3 uid="uid://bi2m73hrl38fb"]
 
-[ext_resource type="Script" path="res://scripts/credit.gd" id="1_kmqx5"]
+[ext_resource type="Script" uid="uid://bayf2pvw8q5xe" path="res://scripts/credit.gd" id="1_kmqx5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmqx5"]
+content_margin_left = 36.0
+content_margin_top = 28.0
+content_margin_right = 36.0
+content_margin_bottom = 32.0
+bg_color = Color(0.239, 0.357, 0.165, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5egdn"]
+content_margin_left = 24.0
+content_margin_top = 20.0
+content_margin_right = 24.0
+content_margin_bottom = 20.0
+bg_color = Color(0.176, 0.259, 0.125, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_st0h4"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.769, 0.416, 0.416, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.102, 0.078, 0.063, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0.102, 0.078, 0.063, 1)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
 
 [node name="Credit" type="Control" unique_id=101508050]
 layout_mode = 3
@@ -11,13 +65,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kmqx5")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1535940032]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 719.0
-color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+[node name="Dimmer" type="ColorRect" parent="." unique_id=1265307903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03, 0.05, 0.03, 0.5)
 
 [node name="Label" type="Label" parent="." unique_id=362297908]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -32,12 +91,152 @@ text = "CREDIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1218704480]
-layout_mode = 0
-offset_left = 1049.0
-offset_top = 622.0
-offset_right = 1197.0
-offset_bottom = 673.0
+[node name="Center" type="CenterContainer" parent="." unique_id=549459863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CreditsPanel" type="PanelContainer" parent="Center" unique_id=712194140]
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kmqx5")
+
+[node name="VB" type="VBoxContainer" parent="Center/CreditsPanel" unique_id=1984266304]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CreditSubtitle" type="Label" parent="Center/CreditsPanel/VB" unique_id=2098142463]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="CreditTitle" type="Label" parent="Center/CreditsPanel/VB" unique_id=1576252110]
+layout_mode = 2
+text = "CRÉDITOS"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Spacer1" type="Control" parent="Center/CreditsPanel/VB" unique_id=903561797]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="BodyPanel" type="PanelContainer" parent="Center/CreditsPanel/VB" unique_id=53288959]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5egdn")
+
+[node name="Grid" type="GridContainer" parent="Center/CreditsPanel/VB/BodyPanel" unique_id=596827297]
+layout_mode = 2
+theme_override_constants/h_separation = 28
+theme_override_constants/v_separation = 14
+columns = 2
+
+[node name="CellDir" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=521289972]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=1635301868]
+layout_mode = 2
+text = "DIRECCIÓN"
+uppercase = true
+
+[node name="NameDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=246556369]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="CellArt" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=1283086198]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolArt" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=245846108]
+layout_mode = 2
+text = "DISEÑO & ARTE"
+
+[node name="NameArt" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=772985360]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="CellProg" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=82395062]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolProg" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellProg" unique_id=202573530]
+layout_mode = 2
+text = "PROGRAMACIÓN"
+
+[node name="NameProg" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellProg" unique_id=1449405379]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="CellMusic" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=660022235]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolMusic" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellMusic" unique_id=452867624]
+layout_mode = 2
+text = "MÚSICA & SFX"
+
+[node name="NameMusic" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellMusic" unique_id=1497044919]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="CellNarr" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=338079762]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolNarr" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellNarr" unique_id=1592859216]
+layout_mode = 2
+text = "NARRATIVA"
+
+[node name="NameNarr" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellNarr" unique_id=1466825809]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="CellThanks" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=755683028]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolThanks" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=41934933]
+layout_mode = 2
+text = "AGRADECIMIENTOS"
+
+[node name="NameThanks1" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=1163877194]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="NameThanks2" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=94946302]
+layout_mode = 2
+text = "añadir nombre"
+
+[node name="Spacer2" type="Control" parent="Center/CreditsPanel/VB" unique_id=1611450947]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="Center/CreditsPanel/VB" unique_id=38379641]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CreditCopyright" type="Label" parent="Center/CreditsPanel/VB/Footer" unique_id=1117224844]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hecho en Godot 4 · © "
+
+[node name="ButtonCreditExit" type="Button" parent="Center/CreditsPanel/VB/Footer" unique_id=1218704480]
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95686275, 0.91764706, 0.8235294, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_st0h4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_st0h4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_st0h4")
 text = "ui_exit"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Center/CreditsPanel/VB/Footer/ButtonCreditExit" to="." method="_on_button_pressed"]

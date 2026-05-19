@@ -37,7 +37,7 @@ func _init_audio_buses() -> void:
 		audio_buses[bus_name] = i
 
 		# Try to find the bus container node
-		var bus_container = get_node_or_null("MarginContainer/VBoxContainer/" + bus_name + "Bus")
+		var bus_container = get_node_or_null("PageSound/" + bus_name + "Bus")
 		if bus_container == null:
 			continue
 
