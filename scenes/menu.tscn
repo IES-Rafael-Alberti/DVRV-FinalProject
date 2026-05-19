@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://mxw8lddn2vpf"]
+
+[ext_resource type="Script" uid="uid://b77jre5h6i45s" path="res://scripts/Menu/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://dnp21sfw1k4c3" path="res://images/menu/menu.png" id="2_mhnvy"]
+[ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bsu16p4k2di5d" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Gear.svg" id="3_4ytvr"]
+[ext_resource type="PackedScene" uid="uid://bi2m73hrl38fb" path="res://scenes/credit.tscn" id="3_con2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqeox"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjb58"]
+bg_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Menu" type="Control" unique_id=1042893531]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="BackgroundContainer" type="PanelContainer" parent="." unique_id=1448090182]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundContainer" unique_id=369209529]
+position = Vector2(642, 359)
+scale = Vector2(0.88458884, 0.34960938)
+texture = ExtResource("2_mhnvy")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=245583536]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 427.0
+offset_right = 735.0
+offset_bottom = 593.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mhnvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=559595266]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1595139921]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v86rl")
+text = "ui_start"
+
+[node name="CreditButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=97648271]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxFlat_70i5f")
+text = "ui_credits"
+
+[node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1711757321]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqeox")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vjb58")
+theme_override_styles/hover = SubResource("StyleBoxFlat_con2f")
+text = "ui_quit"
+
+[node name="OptionButton" type="Button" parent="." unique_id=847409494]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 79.0
+offset_right = 129.0
+offset_bottom = 110.0
+text = "ui_settings
+"
+icon = ExtResource("3_4ytvr")
+
+[node name="Settings" parent="." unique_id=1520513264 instance=ExtResource("2_vjb58")]
+visible = false
+layout_mode = 1
+
+[node name="Credit" parent="." unique_id=101508050 instance=ExtResource("3_con2f")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="OptionButton" to="Settings" method="_on_option_button_pressed"]
