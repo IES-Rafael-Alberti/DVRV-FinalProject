@@ -10,6 +10,7 @@ signal initialized()
 @export var health: float = 100
 @export var maxMagic: float = 100
 @export var magic: float = 100
+@export var magicRegen: float = 1
 @export var speed: Vector2 = Vector2(300,200)
 
 @export_category("Stat Boosts (Unimplemented)")
@@ -59,6 +60,7 @@ func _initialized():
 	StatsModule.health = health
 	StatsModule.maxMagic = maxMagic
 	StatsModule.magic = magic
+	StatsModule.magicRegen = magicRegen
 	StatsModule.speed = speed
 	StatsModule.dmgBoost = dmgBoost
 	StatsModule.defBoost = defBoost
@@ -83,12 +85,14 @@ func _process(delta):
 			MovesetModule.jump()
 		else:
 			if StatusModule.onAir:
-				if InputModule.lightAttack and MovesetModule.airAttack:
+				if InputModule.lightAttack and MovesetModule.has_method("airAttack"):
 					MovesetModule.airAttack()
 			else:
-				if InputModule.lightAttack and MovesetModule.lightAttack:
+				if InputModule.lightAttack and MovesetModule.has_method("lightAttack"):
 					MovesetModule.lightAttack()
-				if InputModule.heavyAttack and MovesetModule.heavyAttack:
+				if InputModule.heavyAttack and MovesetModule.has_method("heavyAttack"):
 					MovesetModule.heavyAttack()
+				if InputModule.lightMagic and MovesetModule.has_method("lightMagic"):
+					MovesetModule.lightMagic()
 	else:
 		StatusModule.isMoving = false

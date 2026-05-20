@@ -12,19 +12,19 @@ signal hit(this: Node2D)
 @export var Visual: Node2D
 
 @export_category("Movement Values")
+@export var thisOwner: CharacterBody2D
+@export var height: int
 @export var lookDir: int = 1
 @export var intMovementDir: Vector3
 @export var AccelerationDir: Vector3
+@export var followHeight: bool = true
 
 @export_category("Hitbox Values")
-@export var thisOwner: CharacterBody2D
 @export var damage: int
-@export var height: int
 @export var stuntime: float
 @export var knockback: Vector3
 @export var targetsAmount: int = 500
 @export var friendGroups: Array[StringName]
-@export var followHeight: bool = true
 
 @export_category("LIfeTime Values")
 @export var lifeTime: float = -1
@@ -37,16 +37,16 @@ func _ready():
 	HitboxMovementModule.AccelerationDir = AccelerationDir
 	HitboxMovementModule.lookDir = lookDir
 	HitboxMovementModule.intHeight = height
+	HitboxMovementModule.followHeight = followHeight
+	HitboxMovementModule.thisOwner = thisOwner
 	$HitboxSprite.visible = showHitbox
 	ImaginaryHitbox.visible = showHitbox
 	HitboxModule.damage = damage
 	HitboxModule.stuntime = stuntime
-	HitboxModule.thisOwner = thisOwner
 	HitboxModule.knockback = knockback
 	HitboxModule.targetsAmount = targetsAmount
 	HitboxModule.friendGroups = friendGroups
 	HitboxModule.callOnHit = "sendHitSignal"
-	HitboxModule.followHeight = followHeight
 	LifetimeModule.lifeTime = lifeTime
 	initialized.emit()
 	

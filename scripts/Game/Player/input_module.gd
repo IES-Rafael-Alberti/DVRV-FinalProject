@@ -17,6 +17,6 @@ func _process(delta):
 		jumpKey = Input.is_action_just_pressed("Jump")
 		lightAttack = Input.is_action_just_pressed("LightAttack")
 		heavyAttack = Input.is_action_just_pressed("HeavyAttack")
-		lightMagic = Input.is_action_just_pressed("LightMagic")
-		heavyMagic = Input.is_action_just_pressed("HeavyMagic")
+		lightMagic = Input.is_action_just_pressed("MagicAttack")
+		#heavyMagic = Input.is_action_just_pressed("HeavyMagic")
 	

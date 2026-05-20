@@ -454,8 +454,6 @@ LifetimeModule = NodePath("LifetimeModule")
 ProyectileAnim = NodePath("ProyectileAnim")
 ImaginaryHitbox = NodePath("ImaginaryHitboxShower")
 Visual = NodePath("Visual")
-intMovementDir = Vector3(5, 5, 0)
-AccelerationDir = Vector3(0, -0.1, 0)
 damage = 5
 stuntime = 1.0
 knockback = Vector3(-100, 20, 0)
@@ -516,7 +514,6 @@ region_rect = Rect2(84, 526, 133, 130)
 libraries/ = SubResource("AnimationLibrary_3lu7g")
 
 [node name="AnimationTree" type="AnimationTree" parent="Visual" unique_id=1652933710]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_bgl7a")
 advance_expression_base_node = NodePath("../AnimationPlayer")
 anim_player = NodePath("../AnimationPlayer")

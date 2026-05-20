@@ -13,7 +13,7 @@ extends Node
 @export var LAAnim: Array[String] = ["AtkLight1","AtkLight2","AtkLight3"]
 @export var LAStuntime: Array[float] = [0.3,0.3,1]
 
-@export var LAHitboxOffset: Array[Vector3] = [Vector3(80,0,-64),Vector3(80,0,-64),Vector3(80,0,-64)]
+@export var LAHitboxOffset: Array[Vector3] = [Vector3(80,64,0),Vector3(80,64,0),Vector3(80,64,0)]
 @export var LAHitboxintMovementDir: Array[Vector3] = [Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0)]
 @export var LAHitboxAccelerationDir: Array[Vector3] = [Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0)]
 @export var LAHitboxSize: Array[int] = [10,10,10]
@@ -30,7 +30,7 @@ var LANumber: int = 0
 @export var HAKnockback: Vector3 = Vector3(500,-1,0)
 @export var HAStuntime: float = 1
 
-@export var HAHitboxOffset: Vector3 = Vector3(80,0,-64)
+@export var HAHitboxOffset: Vector3 = Vector3(80,40,0)
 @export var HAHitboxintMovementDir: Vector3 = Vector3(0,0,0)
 @export var HAHitboxAccelerationDir: Vector3 = Vector3(0,0,0)
 @export var HAHitboxSize: int = 10
@@ -65,6 +65,26 @@ var HANumber: int = 0
 var AirNumber: int = 0
 var AirHitNumber: int = 0
 
+@export_category("Light Magic")
+@export var LMProyectile: PackedScene
+@export var LMManaCost: float = 10
+@export var LMDamage: int = 10
+@export var LMKnockback: Vector3 = Vector3(100,5,0)
+@export var LMStuntime: float = 0.2
+
+@export var LMHitboxOffset: Vector3 = Vector3(100,30,0)
+@export var LMHitboxintMovementDir: Vector3 = Vector3(10,0,0)
+@export var LMHitboxAccelerationDir: Vector3 = Vector3(0,0,0)
+@export var LMHitboxSize: int = 3
+@export var LMHitboxLifetime: float = 1
+@export var LMHitboxTargets: float = 1
+
+@export var LMPlayerMovement: Vector3 = Vector3(0,0,0)
+@export var LMDebounceTime: float = 0.7
+@export var LMAnim: Array[String] = ["MagicLight"]
+@export var LMResetTime: float = 0
+var LMNumber: int = 0
+
 func _initialized():
 	playerModule = get_parent().PlayerModule
 
@@ -90,7 +110,18 @@ func lightAttack():
 	if playerModule.StatusModule.isStunned: return
 	
 	playerModule.MovementModule.applyForceV3(LAPlayerMovement[LANumber]*Vector3(lookDir,1,1))
-	movesetUtils.spawnHitbox(lookDir, LAHitboxOffset[LANumber], LAHitboxintMovementDir[LANumber], LAHitboxAccelerationDir[LANumber], LAHitboxSize[LANumber], LAHitboxLifetime[LANumber], LADamage[LANumber], LAStuntime[LANumber], LAKnockback[LANumber])
+	var hitbox = movesetUtils.spawnHitbox(
+		lookDir, 
+		LAHitboxOffset[LANumber], 
+		LAHitboxintMovementDir[LANumber], 
+		LAHitboxAccelerationDir[LANumber], 
+		LAHitboxSize[LANumber], 
+		LAHitboxLifetime[LANumber], 
+		LADamage[LANumber], 
+		LAStuntime[LANumber], 
+		LAKnockback[LANumber]
+	)
+	hitbox.hit.connect(movesetUtils.regenMagicHit)
 	
 	LANumber += 1
 	var befAtkN = LANumber
@@ -116,7 +147,18 @@ func heavyAttack():
 	
 	playerModule.MovementModule.applyForceV3(HAPlayerMovement*Vector3(lookDir,1,1))
 	
-	movesetUtils.spawnHitbox(lookDir, HAHitboxOffset, HAHitboxintMovementDir, HAHitboxAccelerationDir, HAHitboxSize, HAHitboxLifetime, HADamage, HAStuntime, HAKnockback)
+	var hitbox = movesetUtils.spawnHitbox(
+		lookDir, 
+		HAHitboxOffset,
+		HAHitboxintMovementDir, 
+		HAHitboxAccelerationDir,
+		HAHitboxSize,
+		HAHitboxLifetime, 
+		HADamage, 
+		HAStuntime, 
+		HAKnockback
+	)
+	hitbox.hit.connect(movesetUtils.regenMagicHit)
 	
 	HANumber += 1
 	var befAtkN = HANumber
@@ -143,8 +185,20 @@ func airAttack():
 
 	playerModule.MovementModule.applyForceV3(AirPlayerMovement * Vector3(lookDir,1,1))
 
-	var hitbox = movesetUtils.spawnHitbox(lookDir, AirHitboxOffset, AirHitboxintMovementDir, AirHitboxAccelerationDir, AirHitboxSize, AirHitboxLifetime, AirDamage, AirStuntime, AirKnockback)
+	var hitbox = movesetUtils.spawnHitbox(
+		lookDir, 
+		AirHitboxOffset, 
+		AirHitboxintMovementDir, 
+		AirHitboxAccelerationDir, 
+		AirHitboxSize, 
+		AirHitboxLifetime, 
+		AirDamage, 
+		AirStuntime, 
+		AirKnockback
+	)
 	hitbox.hit.connect(airAttackHit)
+	hitbox.hit.connect(movesetUtils.regenMagicHit)
+	
 	AirNumber += 1
 	var befAtkN = AirNumber
 
@@ -163,3 +217,41 @@ func airAttackHit(hitbox: Area2D):
 	var lookDir = playerModule.StatusModule.lookDir
 	playerModule.MovementModule.applyForceV3(AirHitPlayerMovement * Vector3(lookDir,1,1))
 	AirHitNumber += 1
+
+func lightMagic():
+	if 1 <= LMNumber: return
+	if not movesetUtils.useMana(LMManaCost): return
+	
+	var lookDir = playerModule.StatusModule.lookDir
+	
+	playerModule.StatusModule.applyDebounce(LMDebounceTime)
+	if playerModule.StatusModule.isStunned: return
+	playerModule.AnimModule.forceAnim(LMAnim[0])
+	
+	playerModule.MovementModule.applyForceV3(LMPlayerMovement * Vector3(lookDir, 1, 1))
+	
+	movesetUtils.spawnProyectile(
+		LMProyectile,
+		lookDir,
+		LMHitboxOffset, 
+		LMHitboxintMovementDir, 
+		LMHitboxAccelerationDir, 
+		LMHitboxSize, 
+		LMHitboxLifetime, 
+		LMDamage, 
+		LMStuntime, 
+		LMKnockback,
+		false,
+		false,
+		LMHitboxTargets
+	)
+	
+	LMNumber += 1
+	var befAtkN = LMNumber
+	await get_tree().create_timer(LMDebounceTime).timeout
+	if !playerModule.StatusModule.isStunned:
+		playerModule.AnimModule.resetAnim()
+	
+	await get_tree().create_timer(LMResetTime).timeout
+	if befAtkN == LMNumber:
+		LMNumber = 0
