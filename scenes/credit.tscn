@@ -158,9 +158,15 @@ text = "ui_designArt"
 
 [node name="NameArt" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=772985360]
 layout_mode = 2
-text = "Lola
-Phony
-Cristina"
+text = "Lola "
+
+[node name="NameArt2" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=1066351693]
+layout_mode = 2
+text = " Phony"
+
+[node name="NameArt3" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=340238074]
+layout_mode = 2
+text = "Cristina"
 
 [node name="CellProg" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=82395062]
 layout_mode = 2
@@ -173,8 +179,11 @@ text = "ui_programming"
 
 [node name="NameProg" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellProg" unique_id=1449405379]
 layout_mode = 2
-text = "David
-Santi"
+text = "David"
+
+[node name="NameProg2" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellProg" unique_id=1996752221]
+layout_mode = 2
+text = "Santi"
 
 [node name="CellMusic" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=660022235]
 layout_mode = 2
