@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://clglermckhp1j" path="res://scripts/audio.gd" id="2_6wm04"]
 [ext_resource type="Script" uid="uid://bijuhj6ov52nr" path="res://scripts/language.gd" id="3_f4mfi"]
 [ext_resource type="Texture2D" uid="uid://b02i0tkxvedx" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right-40px.svg" id="4_gjs24"]
+[ext_resource type="Script" uid="uid://dc61ace5s22re" path="res://scripts/controls.gd" id="6_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://chrtfvap6kx8k" path="res://images/menu/icon-mas.png" id="6_am25x"]
 [ext_resource type="Texture2D" uid="uid://c88o2mmw4g77k" path="res://images/menu/icon-menos.png" id="7_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
@@ -453,9 +454,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nilcw")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nilcw")
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="ui_audio" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=1573890620]
+visible = false
 layout_mode = 2
 script = ExtResource("2_6wm04")
 metadata/_tab_index = 0
@@ -681,8 +683,8 @@ text = "INGLÉS                                                                 
 alignment = 0
 
 [node name="ui_controls" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=609031219]
-visible = false
 layout_mode = 2
+script = ExtResource("6_4ppmf")
 metadata/_tab_index = 2
 
 [node name="PageControl" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls" unique_id=1017141158]
@@ -852,7 +854,7 @@ theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
-text = "J"
+text = "I"
 
 [node name="RowB2" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=1012169262]
 layout_mode = 2
@@ -881,7 +883,7 @@ theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
-text = "K"
+text = "O"
 
 [node name="RowB3" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=466259221]
 layout_mode = 2
@@ -939,7 +941,7 @@ theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
-text = "L"
+text = "P"
 
 [node name="Button" type="Button" parent="." unique_id=1066629123]
 custom_minimum_size = Vector2(48, 48)
