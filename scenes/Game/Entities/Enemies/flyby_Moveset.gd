@@ -41,6 +41,7 @@ func airAttack():
 	
 	playerModule.StatusModule.applyDebounce(MeDebounceTime + MeStartLagTime)
 	playerModule.AnimModule.forceAnim(MeAnim[0])
+	AudioManager.play_sfx("patada")
 	await get_tree().create_timer(MeStartLagTime).timeout
 	if playerModule.StatusModule.isStunned: return
 	playerModule.AnimModule.forceAnim(MeAnim[1])

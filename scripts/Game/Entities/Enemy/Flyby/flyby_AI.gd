@@ -56,6 +56,7 @@ func _AIProcess(delta):
 				if posDist.x < atkDistKeep.x and posDist.y < atkDistKeep.y:
 					AIUtils.lookPlayer(closest)
 					await get_tree().create_timer(waitUntilAttack).timeout
+					#AudioManager.play_sfx("patada")
 					AIUtils.useLightAttack()
 				if abs(velocity.x) < abs(speed.x) or (posDist.x > distOffset.x):
 					AIUtils.moveToPlayerX(closest, targetOffset)
