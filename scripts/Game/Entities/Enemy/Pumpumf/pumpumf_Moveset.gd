@@ -82,6 +82,8 @@ func lightAttack():
 	if playerModule.StatusModule.isStunned: return
 	playerModule.AnimModule.forceAnim(MeAnim[1])
 	
+	AudioManager.play_sfx("mordisco")
+	
 	playerModule.MovementModule.applyForceV3(MePlayerMovement*Vector3(lookDir,1,1))
 	
 	movesetUtils.spawnHitbox(lookDir, MeHitboxOffset, MeHitboxintMovementDir, MeHitboxAccelerationDir, MeHitboxSize, MeHitboxLifetime, MeDamage, MeStuntime, MeKnockback)
@@ -113,6 +115,8 @@ func heavyAttack():
 	var hitbox = movesetUtils.spawnHitbox(lookDir, GrHitboxOffset, GrHitboxintMovementDir, GrHitboxAccelerationDir, GrHitboxSize, GrHitboxLifetime, GrDamage, GrStuntime, GrKnockback)
 	hitbox.hit.connect(heavyOnHitAttack)
 	
+	AudioManager.play_sfx("zarpazoP")
+	
 	GrNumber += 1
 	var befAtkN = GrNumber
 	await get_tree().create_timer(GrDebounceTime).timeout
@@ -127,6 +131,7 @@ func heavyAttack():
 	await get_tree().create_timer(GrResetTime).timeout
 	if befAtkN == GrNumber:
 		GrNumber = 0
+		
 
 ################################################################################
 #####                           Attack Parts                               #####
