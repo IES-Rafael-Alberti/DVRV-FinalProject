@@ -115,7 +115,7 @@ horizontal_alignment = 1
 
 [node name="CreditTitle" type="Label" parent="Center/CreditsPanel/VB" unique_id=1576252110]
 layout_mode = 2
-text = "CRÉDITOS"
+text = "ui_credits"
 horizontal_alignment = 1
 uppercase = true
 
@@ -140,12 +140,12 @@ theme_override_constants/separation = 2
 
 [node name="RolDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=1635301868]
 layout_mode = 2
-text = "DIRECCIÓN"
+text = "ui_production"
 uppercase = true
 
 [node name="NameDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=246556369]
 layout_mode = 2
-text = "añadir nombre"
+text = "Lola"
 
 [node name="CellArt" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=1283086198]
 layout_mode = 2
@@ -154,11 +154,13 @@ theme_override_constants/separation = 2
 
 [node name="RolArt" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=245846108]
 layout_mode = 2
-text = "DISEÑO & ARTE"
+text = "ui_designArt"
 
 [node name="NameArt" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellArt" unique_id=772985360]
 layout_mode = 2
-text = "añadir nombre"
+text = "Lola
+Phony
+Cristina"
 
 [node name="CellProg" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=82395062]
 layout_mode = 2
@@ -167,11 +169,12 @@ theme_override_constants/separation = 2
 
 [node name="RolProg" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellProg" unique_id=202573530]
 layout_mode = 2
-text = "PROGRAMACIÓN"
+text = "ui_programming"
 
 [node name="NameProg" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellProg" unique_id=1449405379]
 layout_mode = 2
-text = "añadir nombre"
+text = "David
+Santi"
 
 [node name="CellMusic" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=660022235]
 layout_mode = 2
@@ -180,11 +183,11 @@ theme_override_constants/separation = 2
 
 [node name="RolMusic" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellMusic" unique_id=452867624]
 layout_mode = 2
-text = "MÚSICA & SFX"
+text = "ui_musicSFX"
 
 [node name="NameMusic" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellMusic" unique_id=1497044919]
 layout_mode = 2
-text = "añadir nombre"
+text = "Cristina"
 
 [node name="CellNarr" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=338079762]
 layout_mode = 2
@@ -193,11 +196,11 @@ theme_override_constants/separation = 2
 
 [node name="RolNarr" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellNarr" unique_id=1592859216]
 layout_mode = 2
-text = "NARRATIVA"
+text = "ui_narrative"
 
 [node name="NameNarr" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellNarr" unique_id=1466825809]
 layout_mode = 2
-text = "añadir nombre"
+text = "Phony"
 
 [node name="CellThanks" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=755683028]
 layout_mode = 2
@@ -206,7 +209,7 @@ theme_override_constants/separation = 2
 
 [node name="RolThanks" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=41934933]
 layout_mode = 2
-text = "AGRADECIMIENTOS"
+text = "ui_SThanks"
 
 [node name="NameThanks1" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=1163877194]
 layout_mode = 2

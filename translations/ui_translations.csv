@@ -18,7 +18,6 @@ ui_quit_alert,Se perderá el progreso,All progress will be lost
 ui_yes,Sí,Yes
 ui_no,No,No
 ui_next,Siguiente,Next
-ui_credits,Créditos,Credits
 ui_production,Producción,Production
 ui_design,Diseño,Design
 ui_programming,Programación,Programming
@@ -27,3 +26,23 @@ ui_audio,Audio,Audio
 ui_back,Atras,Back
 ui_exit,Salir,Exit
 ui_controls,Controles,Controle
+ui_movement,Movimiento,Movement
+ui_up,Arriba,Up
+ui_right,Derecha,right
+ui_down,Abajo,Down
+ui_left,Izquierda,Left
+ui_attacks,Ataques,Attacks
+ui_lightAttack,Golpe ligero,Light attack
+ui_strongAttack,Golpe fuerte,Strong attack
+ui_jump,Salto,Jump
+ui_special,Especial,Special
+ui_masterVolumen,Volumen Maestro,Master Volume
+ui_music,Música,Music
+ui_sfx,SFX,SFX
+ui_credits,Créditos,Credits
+ui_production,Producción,Production
+ui_programming,Programación,Programming
+ui_narrative,Narrativa,Narrative
+ui_designArt,Diseño & Arte,Design & Art
+ui_musicSFX,Música & SFX,Music & SFX
+ui_SThanks,Agradecimientos,Special Thanks

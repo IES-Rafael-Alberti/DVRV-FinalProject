@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dxpviy64b7b2l" path="res://assets/Theme/settings_theme.tres" id="1_gjs24"]
 [ext_resource type="Script" uid="uid://clglermckhp1j" path="res://scripts/audio.gd" id="2_6wm04"]
 [ext_resource type="Script" uid="uid://bijuhj6ov52nr" path="res://scripts/language.gd" id="3_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://b02i0tkxvedx" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right-40px.svg" id="4_gjs24"]
 [ext_resource type="Texture2D" uid="uid://chrtfvap6kx8k" path="res://images/menu/icon-mas.png" id="6_am25x"]
 [ext_resource type="Texture2D" uid="uid://c88o2mmw4g77k" path="res://images/menu/icon-menos.png" id="7_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
@@ -541,10 +542,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nilcw")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nilcw")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="ui_audio" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=1573890620]
-visible = false
 layout_mode = 2
 script = ExtResource("2_6wm04")
 metadata/_tab_index = 0
@@ -563,7 +563,7 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-text = "TODO"
+text = "ui_masterVolumen"
 uppercase = true
 
 [node name="MuteButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/MasterBus" unique_id=1076034519]
@@ -576,6 +576,8 @@ flat = true
 [node name="MinusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/MasterBus" unique_id=2139985523]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dg6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g1x8m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tgmq")
@@ -592,6 +594,8 @@ value = 80.0
 [node name="PlusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/MasterBus" unique_id=2143481221]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dg6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g1x8m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tgmq")
@@ -616,7 +620,7 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-text = "MÚSICA"
+text = "ui_music                    "
 uppercase = true
 
 [node name="MuteButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/MusicBus" unique_id=1221134906]
@@ -628,6 +632,8 @@ flat = true
 [node name="MinusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/MusicBus" unique_id=852348584]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dg6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g1x8m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tgmq")
@@ -644,6 +650,8 @@ value = 60.0
 [node name="PlusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/MusicBus" unique_id=1557759474]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dg6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g1x8m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tgmq")
@@ -658,34 +666,36 @@ theme_override_font_sizes/font_size = 16
 text = "60"
 horizontal_alignment = 2
 
-[node name="SFXBus" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound" unique_id=1624630719]
+[node name="SFXBus" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound" unique_id=1643160244]
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="LabelSFX" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=342415073]
+[node name="LabelSFX" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=1004692837]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-text = "SFX"
+text = "ui_sfx                          "
 uppercase = true
 
-[node name="MuteButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=700046398]
+[node name="MuteButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=1172022684]
 layout_mode = 2
 size_flags_vertical = 4
 toggle_mode = true
 flat = true
 
-[node name="MinusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=389625006]
+[node name="MinusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=1092677521]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dg6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g1x8m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tgmq")
 text = "-"
 
-[node name="Slider" type="HSlider" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=537864501]
+[node name="Slider" type="HSlider" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=814774105]
 custom_minimum_size = Vector2(200, 24)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -693,22 +703,23 @@ size_flags_vertical = 4
 step = 10.0
 value = 70.0
 
-[node name="PlusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=334499280]
+[node name="PlusButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=1062312209]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dg6e")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g1x8m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5tgmq")
 text = "+
 "
 
-[node name="VolumeSFX" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=1066263260]
+[node name="VolumeSFX" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound/SFXBus" unique_id=331954651]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-text = "70
-"
+text = "70"
 horizontal_alignment = 2
 
 [node name="ResetButton" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_audio/PageSound" unique_id=1755709902]
@@ -718,9 +729,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 20
 text = "ui_reset"
-icon = ExtResource("7_am25x")
+icon = ExtResource("4_gjs24")
 
 [node name="ui_language" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=40930744]
+visible = false
 layout_mode = 2
 script = ExtResource("3_f4mfi")
 metadata/_tab_index = 1
@@ -743,7 +755,7 @@ theme_override_colors/font_pressed_color = Color(0.0142752165, 0.014275218, 0.01
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_s1xtb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bvmy7")
-text = "ESPAÑOL                                                                                                     ES"
+text = "ESPAÑOL                                                                                                    ES"
 alignment = 0
 
 [node name="LangEN" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_language/PageLang" unique_id=1851179168]
@@ -772,7 +784,7 @@ theme_override_constants/separation = 10
 
 [node name="TitleMovimiento" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=1606325158]
 layout_mode = 2
-text = "MOVIMIENTO"
+text = "ui_movement"
 uppercase = true
 
 [node name="RowUp" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=371689876]
@@ -793,8 +805,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "ARRIBA"
-uppercase = true
+text = "ui_up"
 
 [node name="KeyUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowUp" unique_id=1511220741]
 custom_minimum_size = Vector2(86, 44)
@@ -824,7 +835,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "DERECHA"
+text = "ui_right"
 
 [node name="KeyRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowRight" unique_id=1926386209]
 custom_minimum_size = Vector2(86, 44)
@@ -853,7 +864,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "ABAJO"
+text = "ui_down"
 
 [node name="KeyDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowDown" unique_id=1060004694]
 custom_minimum_size = Vector2(86, 44)
@@ -882,7 +893,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "IZQUIERDA"
+text = "ui_left"
 
 [node name="KeyLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowLeft" unique_id=622578899]
 custom_minimum_size = Vector2(86, 44)
@@ -900,7 +911,7 @@ theme_override_constants/separation = 10
 
 [node name="TitleAtaques" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=125695481]
 layout_mode = 2
-text = "ATAQUES"
+text = "ui_attacks"
 uppercase = true
 
 [node name="RowB1" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=1932210986]
@@ -921,7 +932,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "GOLPE LIGERO"
+text = "ui_lightAttack"
 
 [node name="KeyB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB1" unique_id=895630208]
 custom_minimum_size = Vector2(86, 44)
@@ -950,7 +961,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "GOLPE FUERTE"
+text = "ui_strongAttack"
 
 [node name="KeyB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB2" unique_id=330497054]
 custom_minimum_size = Vector2(86, 44)
@@ -979,7 +990,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "SALTO"
+text = "ui_jump"
 
 [node name="KeyB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB3" unique_id=897293326]
 custom_minimum_size = Vector2(86, 44)
@@ -1008,7 +1019,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
-text = "ESPECIAL"
+text = "ui_special"
 
 [node name="KeyB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB4" unique_id=1837123619]
 custom_minimum_size = Vector2(86, 44)
