@@ -50,6 +50,7 @@ func get_all_buttons(node: Node) -> Array:
 
 #boton para volver al menu
 func _on_button_pressed() -> void:
+	AudioManager.play_sfx("btn")
 	visible = false
 	settings_closed.emit()
 
