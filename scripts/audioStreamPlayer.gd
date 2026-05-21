@@ -1,8 +1,8 @@
 extends AudioStreamPlayer
 
 var menuMusic = preload("res://assets/Music/menu/nastelbom-epic-485879.mp3")
-var nivel1Music = preload("res://assets/music/nivel1/nojisuma-workout-10823.mp3")
-var pelea = preload("res://assets/music/pelea boss/aberrantrealities-waitsignal-514236.mp3")
+var nivel1Music = preload("res://assets/Music/nivel1/nojisuma-workout-10823.mp3")
+var pelea = preload("res://assets/Music/pelea boss/aberrantrealities-waitsignal-514236.mp3")
 
 const volNormal = -10.0
 
