@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b0s4u1e4epkk" path="res://scenes/Game/Entities/Enemies/Flyby.tscn" id="7_46kam"]
 [ext_resource type="PackedScene" uid="uid://iuv35gx70s04" path="res://scenes/Game/Entities/Enemies/Spiffer.tscn" id="8_54qml"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crllf"]
 size = Vector2(128, 720)
 

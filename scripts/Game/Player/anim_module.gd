@@ -67,4 +67,6 @@ func checkAnimSfx():
 			"AtkLight3": AudioManager.play_sfx("ataqueBaston")
 			"AtkSLagHeavy": AudioManager.play_sfx("cabezazo")
 			"Jump": AudioManager.play_sfx("jump")
+			"MagicLight": AudioManager.play_sfx("magiaLigera")
+			
 		lastAnim = currentAnim

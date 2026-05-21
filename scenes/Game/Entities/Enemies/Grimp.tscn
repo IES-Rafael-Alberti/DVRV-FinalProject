@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="3_a0lmu"]
 [ext_resource type="Script" uid="uid://873jsag3lu2i" path="res://scripts/Game/Entities/Enemy/Grimp/grimp_AI.gd" id="3_pn36o"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_ppu6s"]
-[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="6_s4n51"]
+[ext_resource type="Script" path="res://scripts/Game/Entities/EnemyDetector.gd" id="6_s4n51"]
 [ext_resource type="Script" uid="uid://clkkjr4bwsqf1" path="res://scripts/Game/Entities/Enemy/AI_Utilities.gd" id="6_y0wt5"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="8_mr4d4"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="13_38mpw"]
 [ext_resource type="Texture2D" uid="uid://de8xycmp1afo4" path="res://images/Entities/shadow.png" id="14_6ns33"]
 [ext_resource type="Texture2D" uid="uid://j31rhltj355y" path="res://images/Entities/Enemies/Grimp Spritesheet.png" id="15_pn36o"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2c38"]
 radius = 1286.384
