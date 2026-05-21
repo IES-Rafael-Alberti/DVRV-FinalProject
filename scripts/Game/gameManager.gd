@@ -24,6 +24,7 @@ extends Node2D
 func _ready():
 	spawn_players()
 	start_game()
+	MusicManager.play_game()
 	
 func _process(delta):
 	if $Players.get_child_count() == 0:

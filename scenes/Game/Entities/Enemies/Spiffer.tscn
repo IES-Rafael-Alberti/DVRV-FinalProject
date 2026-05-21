@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://oti8bx5fwa0l" path="res://scenes/Game/Entities/Projectiles/Spiffer Spit.tscn" id="4_wwuxe"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_5we2g"]
 [ext_resource type="Script" uid="uid://cq1w8o35ndc0o" path="res://scripts/Game/Entities/Enemy/Spiffer/spiffer_AI.gd" id="6_wwuxe"]
-[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="7_4foeg"]
+[ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scripts/Game/Entities/EnemyDetector.gd" id="7_4foeg"]
 [ext_resource type="Script" uid="uid://clkkjr4bwsqf1" path="res://scripts/Game/Entities/Enemy/AI_Utilities.gd" id="7_chu3p"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="8_1xvb6"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="9_v37mt"]

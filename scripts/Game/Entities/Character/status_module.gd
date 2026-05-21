@@ -51,6 +51,7 @@ func setLookDir(newDir: float):
 
 func setDead():
 	isDead = true
+	AudioManager.play_sfx("derrota")
 	playerModule.player.dead.emit(playerModule.player)
 	
 func setVisible(visible: bool):

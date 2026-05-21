@@ -1,6 +1,7 @@
 extends Node
 
 @export var hitboxPacked: PackedScene
+@export var magicHitGainPercent: int = 10
 @onready var player: Node = get_parent().get_parent()
 
 ################################################################################
@@ -32,6 +33,17 @@ func getTargetPos(target: CharacterBody2D):
 func wait_physics_frames(frames: int) -> void:
 	for i in frames:
 		await get_tree().physics_frame
+
+func useMana(amount: float):
+	var statsModule = player.PlayerModule.StatsModule
+	if amount > statsModule.magic:
+		return false
+	statsModule.magic -= amount
+	return true
+	
+func regenMagicHit(hitbox: Area2D):
+	var statsModule = player.PlayerModule.StatsModule
+	statsModule.magic += hitbox.damage/100.0*magicHitGainPercent
 
 ################################################################################
 #####                           Calculations                               #####
@@ -98,10 +110,10 @@ func spawnProyectile(proyectile, lookDir, positionOffset = Vector3.ZERO, intMove
 	
 	var offset = positionOffset
 	hitbox.lookDir = lookDir
-	hitbox.global_position = Vector2(offset[0]*lookDir,offset[2]-offset[1]) + (player.position if !followParent else Vector2.ZERO)
+	hitbox.global_position = Vector2(offset[0]*lookDir,offset[2]) + (player.global_position if !followParent else Vector2.ZERO)
 	if intMovementDir: hitbox.intMovementDir = intMovementDir*Vector3(1,1,1)
 	if AccelerationDir: hitbox.AccelerationDir = AccelerationDir*Vector3(1,1,1)
-	hitbox.height = offset[1] + player.PlayerModule.HeightModule.height if !followParent else 0
+	hitbox.height = offset[1] + player.PlayerModule.HeightModule.height
 	if scale: hitbox.scale *= scale
 	if lifetime: hitbox.lifeTime = lifetime
 	if damage: hitbox.damage = damage

@@ -1,7 +1,6 @@
 extends Node
 
 @export var this: Area2D = get_parent()
-@onready var thisOwner: CharacterBody2D
 
 @export_category("Values")
 @export var damage: int
@@ -10,7 +9,6 @@ extends Node
 @export var targetsAmount: int = 500
 @export var friendGroups: Array[StringName]
 @export var callOnHit: String
-@export var followHeight: bool
 
 @export var disabled: float = false
 var inside: Array[CharacterBody2D] = []
@@ -19,7 +17,6 @@ var newHeight: float = 0
 
 func _process(delta):
 	newHeight = this.HitboxMovementModule.height
-	newHeight += thisOwner.PlayerModule.HeightModule.height
 	for target in inside:
 		if isTrulyIn(target) and not hitted.has(target):
 			target.PlayerModule.DamageModule.takeDamage(damage,stuntime,knockback*Vector3(this.lookDir,1,1))

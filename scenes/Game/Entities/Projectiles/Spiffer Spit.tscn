@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cetqui21umd2g" path="res://scripts/Game/Hitbox/lifetime_module.gd" id="2_gl2lp"]
 [ext_resource type="Script" uid="uid://cepmk55uduy27" path="res://scripts/Game/Hitbox/hitbox_module.gd" id="3_0by4v"]
 [ext_resource type="Script" uid="uid://bghoagk1dci3i" path="res://scripts/Game/Hitbox/hitbox_movement_module.gd" id="4_phbns"]
-[ext_resource type="Script" uid="uid://i1vjniystpd" path="res://scenes/Game/Entities/Projectiles/proyectileAnim.gd" id="5_3lu7g"]
+[ext_resource type="Script" uid="uid://i1vjniystpd" path="res://scripts/Game/Hitbox/proyectileAnim.gd" id="5_3lu7g"]
 [ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="5_tsehf"]
 [ext_resource type="Script" uid="uid://c378j886clqog" path="res://scripts/Game/Hitbox/imaginary_hitbox_shower.gd" id="6_v2nil"]
 [ext_resource type="Texture2D" uid="uid://4gno20qk755b" path="res://images/Entities/Others/Projectiles Spritesheet.png" id="7_mn7rb"]

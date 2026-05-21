@@ -71,8 +71,10 @@ func jump():
 	if 1 <= TpNumber or playerModule.StatusModule.isStunned: return
 	
 	TpNumber += 1
+	
 	playerModule.StatusModule.applyDebounce(TpDebounceTime + TpStartLagTime+1)
 	playerModule.AnimModule.forceAnim(TpAnim[0])
+	AudioManager.play_sfx("excava") #excavar/entra
 	await get_tree().create_timer(TpStartLagTime).timeout
 	if playerModule.StatusModule.isStunned:
 		TpNumber = 0
@@ -94,6 +96,7 @@ func jump():
 	if !playerModule.StatusModule.isStunned:
 		playerModule.AnimModule.resetAnim()
 	
+	AudioManager.play_sfx("sale") #sale
 	await get_tree().create_timer(TPResetTime).timeout
 	if befAtkN == TpNumber:
 		TpNumber = 0
@@ -109,6 +112,7 @@ func lightAttack():
 	
 	playerModule.StatusModule.applyDebounce(SHDebounceTime + SHStartLagTime)
 	playerModule.AnimModule.forceAnim(SHAnim[0])
+	
 	await get_tree().create_timer(SHStartLagTime).timeout
 	if playerModule.StatusModule.isStunned: return
 	playerModule.AnimModule.forceAnim(SHAnim[1])
@@ -133,6 +137,7 @@ func lightAttack():
 	
 	SHNumber += 1
 	var befAtkN = SHNumber
+	
 	await get_tree().create_timer(SHDebounceTime).timeout
 	if !playerModule.StatusModule.isStunned:
 		playerModule.AnimModule.resetAnim()
@@ -151,6 +156,7 @@ func heavyAttack():
 	await get_tree().create_timer(SVStartLagTime).timeout
 	if playerModule.StatusModule.isStunned: return
 	playerModule.AnimModule.forceAnim(SVAnim[1])
+	AudioManager.play_sfx("escupitajo") #escupitajo?
 	
 	playerModule.MovementModule.applyForceV3(SVPlayerMovement * Vector3(lookDir, 1, 1))
 	
@@ -189,3 +195,4 @@ func heavyAttack():
 	if befAtkN == SVNumber:
 		SVNumber = 0
 	
+	AudioManager.play_sfx("splat") #impacta

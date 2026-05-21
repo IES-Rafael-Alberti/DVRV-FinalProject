@@ -4,6 +4,7 @@ extends Node
 @export var health: float
 @export var maxMagic: float
 @export var magic: float
+@export var magicRegen: float
 @export var speed: Vector2
 
 @export_category("Extras")
@@ -16,3 +17,9 @@ extends Node
 @export var ignoresStun: bool ## Turn IgnoreKnockbackWithIt
 @export var jPower: float
 @export var gravity: float
+
+func _process(delta):
+	if magic < maxMagic:
+		magic += magicRegen*delta
+	if magic > maxMagic:
+		magic = maxMagic

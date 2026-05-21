@@ -10,7 +10,7 @@ var thisOwner: CharacterBody2D
 	
 func _on_initialized():
 	if not this: this = get_parent()
-	thisOwner = this.get_parent() if this.get_parent() is CharacterBody2D else null
+	thisOwner = this.thisOwner
 	
 	if thisOwner:
 		while true:

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnc8tnds8ryqw" path="res://scenes/Game/UI/player_gui.tscn" id="2_kcqp7"]
 [ext_resource type="PackedScene" uid="uid://cn0nsbc6f1er4" path="res://scenes/Game/Entities/Player/DefaultPlayer.tscn" id="2_mhr4y"]
 [ext_resource type="PackedScene" uid="uid://dprhj58a0gbm2" path="res://scenes/Game/UI/UI.tscn" id="3_unq2p"]
-[ext_resource type="PackedScene" uid="uid://b1p4y5buvil5c" path="res://scenes/menu.tscn" id="4_i3iq3"]
+[ext_resource type="PackedScene" uid="uid://mxw8lddn2vpf" path="res://scenes/menu.tscn" id="4_i3iq3"]
 [ext_resource type="Script" uid="uid://bjremamuxi5vk" path="res://scripts/Game/Entities/Enemy/EnemySpawner_module.gd" id="4_koclg"]
 [ext_resource type="PackedScene" uid="uid://csu2xssxwqn4n" path="res://scenes/Game/Entities/Enemies/Grimp.tscn" id="4_sa5pu"]
 [ext_resource type="Texture2D" uid="uid://b4iybnsxsuru6" path="res://images/Map/MainStage Asset.png" id="5_koclg"]

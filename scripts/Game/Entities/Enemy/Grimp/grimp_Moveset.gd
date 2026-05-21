@@ -48,6 +48,7 @@ func lightAttack():
 	playerModule.AnimModule.forceAnim(MeAnim[0])
 	await get_tree().create_timer(MeStartLagTime).timeout
 	if playerModule.StatusModule.isStunned: return
+	AudioManager.play_sfx("zarpazoG")
 	playerModule.AnimModule.forceAnim(MeAnim[1])
 	
 	playerModule.MovementModule.applyForceV3(MePlayerMovement*Vector3(lookDir,1,1))
