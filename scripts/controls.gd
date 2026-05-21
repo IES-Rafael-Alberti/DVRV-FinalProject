@@ -221,6 +221,7 @@ func _switch_page(mode: String) -> void:
 
 func _update_toggle_styles(keyboard_active: bool) -> void:
 	if _btn_keyboard:
+		AudioManager.play_sfx("btn")
 		var s = _style_toggle_active if keyboard_active else _style_toggle_inactive
 		_btn_keyboard.add_theme_stylebox_override("normal", s)
 		_btn_keyboard.add_theme_stylebox_override("hover", s)
@@ -229,6 +230,7 @@ func _update_toggle_styles(keyboard_active: bool) -> void:
 		_btn_keyboard.add_theme_color_override("font_color",
 			Color(0.941, 0.784, 0.314, 1) if keyboard_active else Color(0.957, 0.918, 0.824, 1))
 	if _btn_gamepad:
+		AudioManager.play_sfx("btn")
 		var s = _style_toggle_active if not keyboard_active else _style_toggle_inactive
 		_btn_gamepad.add_theme_stylebox_override("normal", s)
 		_btn_gamepad.add_theme_stylebox_override("hover", s)
@@ -243,6 +245,7 @@ func _update_toggle_styles(keyboard_active: bool) -> void:
 # ══════════════════════════════════════════════════════════════════════════════
 
 func _on_key_button_pressed(id: String) -> void:
+	AudioManager.play_sfx("btn")
 	if _listening_id == id and _listening_mode == "keyboard":
 		_cancel_listening()
 		return
@@ -258,6 +261,7 @@ func _on_key_button_pressed(id: String) -> void:
 # ══════════════════════════════════════════════════════════════════════════════
 
 func _on_pad_button_pressed(id: String) -> void:
+	AudioManager.play_sfx("btn")
 	if _listening_id == id and _listening_mode == "gamepad":
 		_cancel_listening()
 		return

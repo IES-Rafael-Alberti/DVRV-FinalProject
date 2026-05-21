@@ -32,6 +32,7 @@ func _setup_buttons() -> void:
 func _on_lang_button_toggled(_pressed: bool, locale: String) -> void:
 	# Aunque el botón se desactive, siempre aplicamos el idioma al pulsar
 	change_language_by_locale(locale)
+	AudioManager.play_sfx("btn")
 
 func change_language_by_locale(locale: String) -> void:
 	TranslationServer.set_locale(locale)

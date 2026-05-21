@@ -159,12 +159,14 @@ func _on_mute_toggled(toggled_on: bool, bus_name: String) -> void:
 
 
 func _on_minus_pressed(bus_name: String) -> void:
+	AudioManager.play_sfx("btn")
 	if bus_name in audio_controls:
 		var slider = audio_controls[bus_name]["volume_slider"]
 		slider.value -= 10
 
 
 func _on_plus_pressed(bus_name: String) -> void:
+	AudioManager.play_sfx("btn")
 	if bus_name in audio_controls:
 		var slider = audio_controls[bus_name]["volume_slider"]
 		slider.value += 10

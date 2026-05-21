@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="2_vjb58"]
 [ext_resource type="Texture2D" uid="uid://bsu16p4k2di5d" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Gear.svg" id="3_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://ctjqfpokhwb16" path="res://images/menu/MainStage Asset.png" id="3_13sgg"]
-[ext_resource type="PackedScene" uid="uid://bi2m73hrl38fb" path="res://scenes/credit.tscn" id="3_con2f"]
+[ext_resource type="PackedScene" path="res://scenes/credit.tscn" id="3_con2f"]
 [ext_resource type="Texture2D" uid="uid://48a62eaak1d" path="res://images/menu/Spores & Dreams Title color1.png" id="4_i6lef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]

@@ -33,25 +33,30 @@ func _toggle_pause():
 		$SettingsButton.visible = is_paused
 
 func _on_settings_closed():
+	AudioManager.play_sfx("btnSalir")
 	# Al cerrar settings el juego sigue pausado, segimos en el menu de pausa
 	if is_paused:
 		get_tree().paused = true
 
 func _on_exit_button_pressed() -> void:
+	AudioManager.play_sfx("btnSalir")
 	is_paused = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 
 func _on_continue_button_pressed() -> void:
+	AudioManager.play_sfx("btn")
 	_toggle_pause()
 
 
 func _on_retry_button_pressed() -> void:
+	AudioManager.play_sfx("btn")
 	is_paused = false
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	
 func _on_settings_button_pressed() -> void:
+		AudioManager.play_sfx("btn")
 		if settings_node:
 			settings_node.visible = true

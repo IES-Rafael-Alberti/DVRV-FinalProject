@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chrtfvap6kx8k" path="res://images/menu/icon-mas.png" id="6_am25x"]
 [ext_resource type="Texture2D" uid="uid://c88o2mmw4g77k" path="res://images/menu/icon-menos.png" id="7_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
-[ext_resource type="Script" uid="uid://dc61ace5s22re" path="res://scripts/controls.gd" id="8_ctrl"]
+[ext_resource type="Script" path="res://scripts/controls.gd" id="8_ctrl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oe2nd"]
 content_margin_left = 0.0
