@@ -21,7 +21,10 @@ func _load_config() -> void:
 # para que no haga falta abrir Settings antes de jugar.
 func _apply_saved_controls() -> void:
 	var actions: PackedStringArray = ["MoveUp", "MoveRight", "MoveDown", "MoveLeft", "LightAttack", "HeavyAttack", "Jump", "MagicAttack"]
+	var move_actions: PackedStringArray = ["MoveUp", "MoveRight", "MoveDown", "MoveLeft"]
+	var attack_actions: PackedStringArray = ["LightAttack", "HeavyAttack", "Jump", "MagicAttack"]
 	
+	# ── Teclado ──
 	for action in actions:
 		var saved_keycode: int = get_setting("controls", action, -1)
 		if saved_keycode < 0:
@@ -43,6 +46,49 @@ func _apply_saved_controls() -> void:
 		new_ev.physical_keycode = saved_keycode
 		new_ev.device = -1
 		InputMap.action_add_event(action, new_ev)
+		
+	# ── Gamepad botones (ataques) ──
+	for action in attack_actions:
+		var saved_btn: int = get_setting("controls_gp", action, -1)
+		if saved_btn < 0:
+			continue
+		if not InputMap.has_action(action):
+			continue
+		var keep: Array[InputEvent] = []
+		for ev in InputMap.action_get_events(action):
+			if not ev is InputEventJoypadButton:
+				keep.append(ev)
+		InputMap.action_erase_events(action)
+		for ev in keep:
+			InputMap.action_add_event(action, ev)
+			var new_ev := InputEventJoypadButton.new()
+			new_ev.button_index = saved_btn
+			new_ev.device = -1
+			InputMap.action_add_event(action, new_ev)
+			
+	# ── Gamepad ejes (movimiento) — guardados como "axis:value" ──
+	for action in move_actions:
+		var saved: String = get_setting("controls_gp", action, "")
+		if saved == "":
+			continue
+		if not InputMap.has_action(action):
+			continue
+		var parts = saved.split(":")	
+		if parts.size() != 2:
+			continue
+		var keep: Array[InputEvent] = []
+		for ev in InputMap.action_get_events(action):
+			if not ev is InputEventJoypadMotion:
+				keep.append(ev)
+		InputMap.action_erase_events(action)
+		for ev in keep:
+			InputMap.action_add_event(action, ev)
+		var new_ev := InputEventJoypadMotion.new()
+		new_ev.axis = int(parts[0])
+		new_ev.axis_value = float(parts[1])
+		new_ev.device = -1
+		InputMap.action_add_event(action, new_ev)
+				
 
 func save_config() -> void:
 	config.save(CONFIG_FILE_PATH)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwvte4v0jsgh"
+path="res://.godot/imported/SFX mov arbusto.mp3-6358e5fb56f22302a4f08734ad2f19a7.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/general/SFX mov arbusto.mp3"
+dest_files=["res://.godot/imported/SFX mov arbusto.mp3-6358e5fb56f22302a4f08734ad2f19a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

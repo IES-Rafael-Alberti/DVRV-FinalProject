@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://clglermckhp1j" path="res://scripts/audio.gd" id="2_6wm04"]
 [ext_resource type="Script" uid="uid://bijuhj6ov52nr" path="res://scripts/language.gd" id="3_f4mfi"]
 [ext_resource type="Texture2D" uid="uid://b02i0tkxvedx" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right-40px.svg" id="4_gjs24"]
-[ext_resource type="Script" uid="uid://dc61ace5s22re" path="res://scripts/controls.gd" id="6_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://chrtfvap6kx8k" path="res://images/menu/icon-mas.png" id="6_am25x"]
 [ext_resource type="Texture2D" uid="uid://c88o2mmw4g77k" path="res://images/menu/icon-menos.png" id="7_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
+[ext_resource type="Script" uid="uid://dc61ace5s22re" path="res://scripts/controls.gd" id="8_ctrl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oe2nd"]
 content_margin_left = 0.0
@@ -684,27 +684,49 @@ alignment = 0
 
 [node name="ui_controls" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=609031219]
 layout_mode = 2
-script = ExtResource("6_4ppmf")
+script = ExtResource("8_ctrl")
 metadata/_tab_index = 2
 
-[node name="PageControl" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls" unique_id=1017141158]
+[node name="ControlsRoot" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls" unique_id=2141813235]
 layout_mode = 2
+theme_override_constants/separation = 12
 
-[node name="ColMove" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl" unique_id=738487855]
+[node name="SubToggleBar" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot" unique_id=885052987]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BtnKeyboard" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/SubToggleBar" unique_id=918493136]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "⌨  TECLADO"
+
+[node name="BtnGamepad" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/SubToggleBar" unique_id=2061965137]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "🎮  MANDO"
+
+[node name="PageControl" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot" unique_id=1961908829]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColMove" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl" unique_id=769882800]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="TitleMovimiento" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=1606325158]
+[node name="TitleMovimiento" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove" unique_id=597726798]
 layout_mode = 2
 text = "ui_movement"
 uppercase = true
 
-[node name="RowUp" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=371689876]
+[node name="RowUp" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove" unique_id=1205789140]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowUp" unique_id=433688135]
+[node name="GlyphUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowUp" unique_id=2011515086]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -713,14 +735,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "↑"
 
-[node name="LblUp" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowUp" unique_id=890636151]
+[node name="LblUp" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowUp" unique_id=1599413230]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_up"
 
-[node name="KeyUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowUp" unique_id=1511220741]
+[node name="KeyUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowUp" unique_id=1498536436]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -730,11 +752,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "W"
 
-[node name="RowRight" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=1052886053]
+[node name="RowRight" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove" unique_id=1046588739]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowRight" unique_id=1513361020]
+[node name="GlyphRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowRight" unique_id=1328403285]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -743,14 +765,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "→"
 
-[node name="LblRight" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowRight" unique_id=1971862492]
+[node name="LblRight" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowRight" unique_id=1668769196]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_right"
 
-[node name="KeyRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowRight" unique_id=1926386209]
+[node name="KeyRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowRight" unique_id=848705349]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -759,11 +781,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "D"
 
-[node name="RowDown" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=1320005690]
+[node name="RowDown" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove" unique_id=1527147497]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowDown" unique_id=10495583]
+[node name="GlyphDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowDown" unique_id=448599049]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -772,14 +794,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "↓"
 
-[node name="LblDown" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowDown" unique_id=1516202887]
+[node name="LblDown" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowDown" unique_id=263657927]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_down"
 
-[node name="KeyDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowDown" unique_id=1060004694]
+[node name="KeyDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowDown" unique_id=911544359]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -788,11 +810,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "S"
 
-[node name="RowLeft" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove" unique_id=1002497231]
+[node name="RowLeft" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove" unique_id=1469427521]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowLeft" unique_id=511662886]
+[node name="GlyphLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowLeft" unique_id=1220620507]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -801,14 +823,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "←"
 
-[node name="LblLeft" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowLeft" unique_id=1045832721]
+[node name="LblLeft" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowLeft" unique_id=1521965431]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_left"
 
-[node name="KeyLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColMove/RowLeft" unique_id=622578899]
+[node name="KeyLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColMove/RowLeft" unique_id=171089174]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -817,21 +839,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "A"
 
-[node name="ColAttack" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl" unique_id=1283094074]
+[node name="ColAttack" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl" unique_id=1308976801]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="TitleAtaques" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=125695481]
+[node name="TitleAtaques" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack" unique_id=522713578]
 layout_mode = 2
 text = "ui_attacks"
 uppercase = true
 
-[node name="RowB1" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=1932210986]
+[node name="RowB1" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack" unique_id=2053864970]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB1" unique_id=612805446]
+[node name="GlyphB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB1" unique_id=823632548]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -840,14 +862,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "B1"
 
-[node name="LblB1" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB1" unique_id=1225588600]
+[node name="LblB1" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB1" unique_id=2000887167]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_lightAttack"
 
-[node name="KeyB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB1" unique_id=895630208]
+[node name="KeyB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB1" unique_id=477138073]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -856,11 +878,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "I"
 
-[node name="RowB2" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=1012169262]
+[node name="RowB2" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack" unique_id=304770085]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB2" unique_id=2016190053]
+[node name="GlyphB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB2" unique_id=1799147900]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -869,14 +891,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "B2"
 
-[node name="LblB2" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB2" unique_id=758484147]
+[node name="LblB2" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB2" unique_id=1407166011]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_strongAttack"
 
-[node name="KeyB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB2" unique_id=330497054]
+[node name="KeyB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB2" unique_id=1175951171]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -885,11 +907,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "O"
 
-[node name="RowB3" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=466259221]
+[node name="RowB3" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack" unique_id=2109301606]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB3" unique_id=376361002]
+[node name="GlyphB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB3" unique_id=251772631]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -898,14 +920,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "B3"
 
-[node name="LblB3" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB3" unique_id=866703877]
+[node name="LblB3" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB3" unique_id=1915922647]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_jump"
 
-[node name="KeyB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB3" unique_id=897293326]
+[node name="KeyB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB3" unique_id=1050011284]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -914,11 +936,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "SPACE"
 
-[node name="RowB4" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack" unique_id=59864102]
+[node name="RowB4" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack" unique_id=1545961893]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="GlyphB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB4" unique_id=896768341]
+[node name="GlyphB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB4" unique_id=1345114071]
 custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
@@ -927,14 +949,14 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
 disabled = true
 text = "B4"
 
-[node name="LblB4" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB4" unique_id=512675499]
+[node name="LblB4" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB4" unique_id=1311884325]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
 theme_override_font_sizes/font_size = 15
 text = "ui_special"
 
-[node name="KeyB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/PageControl/ColAttack/RowB4" unique_id=1837123619]
+[node name="KeyB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageControl/ColAttack/RowB4" unique_id=947297457]
 custom_minimum_size = Vector2(86, 44)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
@@ -942,6 +964,264 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
 text = "P"
+
+[node name="PageGamepad" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot" unique_id=1464099674]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColMoveGP" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad" unique_id=347087994]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="TitleMovimiento" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP" unique_id=404265938]
+layout_mode = 2
+text = "ui_movement"
+uppercase = true
+
+[node name="RowUp" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP" unique_id=15098613]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowUp" unique_id=431552500]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "↑"
+
+[node name="LblUp" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowUp" unique_id=772336505]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_up"
+
+[node name="PadUp" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowUp" unique_id=1964786816]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "L.STICK ↑"
+
+[node name="RowRight" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP" unique_id=793881390]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowRight" unique_id=1985321797]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "→"
+
+[node name="LblRight" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowRight" unique_id=547137873]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_right"
+
+[node name="PadRight" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowRight" unique_id=498633840]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "L.STICK →"
+
+[node name="RowDown" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP" unique_id=401861232]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowDown" unique_id=667246563]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "↓"
+
+[node name="LblDown" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowDown" unique_id=278684112]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_down"
+
+[node name="PadDown" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowDown" unique_id=1321415588]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "L.STICK ↓"
+
+[node name="RowLeft" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP" unique_id=547425628]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowLeft" unique_id=170162120]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "←"
+
+[node name="LblLeft" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowLeft" unique_id=334372687]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_left"
+
+[node name="PadLeft" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColMoveGP/RowLeft" unique_id=683254428]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "L.STICK ←"
+
+[node name="ColAttackGP" type="VBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad" unique_id=490127247]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="TitleAtaques" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP" unique_id=1712055533]
+layout_mode = 2
+text = "ui_attacks"
+uppercase = true
+
+[node name="RowB1" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP" unique_id=124357978]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB1" unique_id=44926972]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "B1"
+
+[node name="LblB1" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB1" unique_id=1236704247]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_lightAttack"
+
+[node name="PadB1" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB1" unique_id=569174729]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "X"
+
+[node name="RowB2" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP" unique_id=1405920229]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB2" unique_id=453823320]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "B2"
+
+[node name="LblB2" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB2" unique_id=788084817]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_strongAttack"
+
+[node name="PadB2" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB2" unique_id=950109240]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "B"
+
+[node name="RowB3" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP" unique_id=1743200232]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB3" unique_id=505913693]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "B3"
+
+[node name="LblB3" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB3" unique_id=1241934155]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_jump"
+
+[node name="PadB3" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB3" unique_id=210475621]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "A"
+
+[node name="RowB4" type="HBoxContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP" unique_id=9282091]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GlyphB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB4" unique_id=737150078]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_slfok")
+disabled = true
+text = "B4"
+
+[node name="LblB4" type="Label" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB4" unique_id=1109321873]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.918, 0.824, 1)
+theme_override_font_sizes/font_size = 15
+text = "ui_special"
+
+[node name="PadB4" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_controls/ControlsRoot/PageGamepad/ColAttackGP/RowB4" unique_id=548976778]
+custom_minimum_size = Vector2(86, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.102, 0.078, 0.063, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hxbv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1hxbv")
+text = "Y"
 
 [node name="Button" type="Button" parent="." unique_id=1066629123]
 custom_minimum_size = Vector2(48, 48)

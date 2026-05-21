@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by6yhxx8nd6ka"
+path="res://.godot/imported/SFX victoriaa.mp3-e66563ef5b6c793a44c1749b2a47e4b6.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/general/SFX victoriaa.mp3"
+dest_files=["res://.godot/imported/SFX victoriaa.mp3-e66563ef5b6c793a44c1749b2a47e4b6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

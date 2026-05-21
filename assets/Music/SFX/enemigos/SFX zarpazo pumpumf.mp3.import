@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddw0sb58s25mj"
+path="res://.godot/imported/SFX zarpazo pumpumf.mp3-98c76f03593af8196cb8f93512d5b800.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX zarpazo pumpumf.mp3"
+dest_files=["res://.godot/imported/SFX zarpazo pumpumf.mp3-98c76f03593af8196cb8f93512d5b800.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

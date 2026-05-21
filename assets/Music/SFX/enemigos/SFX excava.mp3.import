@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dyipcyihgi4vl"
+path="res://.godot/imported/SFX excava.mp3-08a3457696775e7e8941f285cc12f923.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX excava.mp3"
+dest_files=["res://.godot/imported/SFX excava.mp3-08a3457696775e7e8941f285cc12f923.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

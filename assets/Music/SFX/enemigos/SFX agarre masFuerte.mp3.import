@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6u33gj1tox76"
+path="res://.godot/imported/SFX agarre masFuerte.mp3-cc663a77614cda6d3f41ce980af4c66f.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX agarre masFuerte.mp3"
+dest_files=["res://.godot/imported/SFX agarre masFuerte.mp3-cc663a77614cda6d3f41ce980af4c66f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

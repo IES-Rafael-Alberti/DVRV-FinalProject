@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w7dpjh2go5os"
+path="res://.godot/imported/SFX ataque boss masFuerte.mp3-3d9925fd9a8d20aa3e2528afaf9138f5.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX ataque boss masFuerte.mp3"
+dest_files=["res://.godot/imported/SFX ataque boss masFuerte.mp3-3d9925fd9a8d20aa3e2528afaf9138f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

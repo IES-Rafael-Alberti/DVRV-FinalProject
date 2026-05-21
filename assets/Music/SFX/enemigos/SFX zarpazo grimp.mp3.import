@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d111bxrb02vd0"
+path="res://.godot/imported/SFX zarpazo grimp.mp3-6aa0bdd9421d1940ffe4af22112ff01d.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX zarpazo grimp.mp3"
+dest_files=["res://.godot/imported/SFX zarpazo grimp.mp3-6aa0bdd9421d1940ffe4af22112ff01d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

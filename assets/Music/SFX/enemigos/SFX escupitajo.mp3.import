@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2t6i82ba2ehn"
+path="res://.godot/imported/SFX escupitajo.mp3-ac85b5766519361b2eaadc32187044e4.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX escupitajo.mp3"
+dest_files=["res://.godot/imported/SFX escupitajo.mp3-ac85b5766519361b2eaadc32187044e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

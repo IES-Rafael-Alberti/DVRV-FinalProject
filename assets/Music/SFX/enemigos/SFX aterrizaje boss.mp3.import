@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r2bx6ibuo8bm"
+path="res://.godot/imported/SFX aterrizaje boss.mp3-8e365a377e0e8699cdedaab88a05e5ad.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/SFX/enemigos/SFX aterrizaje boss.mp3"
+dest_files=["res://.godot/imported/SFX aterrizaje boss.mp3-8e365a377e0e8699cdedaab88a05e5ad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
