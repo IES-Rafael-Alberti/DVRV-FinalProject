@@ -29,6 +29,13 @@ func _fade_to(new_music: AudioStream):
 
 	#pa cambiar musiquita
 	stream = new_music
+	
+	#para bucle
+	if new_music == nivel1Music:
+		var playback = stream as AudioStreamMP3
+		if playback:
+			playback.loop = true
+	
 	volume_db = -90
 	play()
 

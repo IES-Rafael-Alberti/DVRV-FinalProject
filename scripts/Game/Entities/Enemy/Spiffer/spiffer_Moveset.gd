@@ -92,11 +92,12 @@ func jump():
 	playerModule.StatusModule.setVisible(true)
 	playerModule.StatusModule.setCanBeDamaged(true)
 	playerModule.AnimModule.forceAnim(TpAnim[1])
+	AudioManager.play_sfx("sale") #sale
+	
 	await get_tree().create_timer(TpDebounceTime).timeout
 	if !playerModule.StatusModule.isStunned:
 		playerModule.AnimModule.resetAnim()
-	
-	AudioManager.play_sfx("sale") #sale
+		
 	await get_tree().create_timer(TPResetTime).timeout
 	if befAtkN == TpNumber:
 		TpNumber = 0

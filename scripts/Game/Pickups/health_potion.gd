@@ -37,6 +37,7 @@ func _on_body_entered(body: Node2D) -> void:
 	stats.health = min(stats.health + heal_amount, stats.maxHealth)
 
 	# Feedback visual/sonoro (opcional)
+	AudioManager.play_sfx("bonus")
 	_play_pickup_effect()
 
 	if destroy_on_pickup:
