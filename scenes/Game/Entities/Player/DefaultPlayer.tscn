@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cn0nsbc6f1er4"]
 
 [ext_resource type="Script" uid="uid://dbjji30kw3c0f" path="res://scripts/Game/Entities/Character/playerPhysics.gd" id="1_tuyoq"]
-[ext_resource type="Script" uid="uid://x6oifdqj03x5" path="res://scripts/Game/Entities/Enemy/enemy_death.gd" id="2_jpqlp"]
+[ext_resource type="Script" uid="uid://blhemeqa5ty0w" path="res://scripts/Game/Entities/Character/player_death.gd" id="2_b6d4j"]
 [ext_resource type="PackedScene" uid="uid://d1gqlmftxk0dq" path="res://scenes/Game/Entities/Projectiles/Spore Shoot.tscn" id="4_b6d4j"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_82rnm"]
 [ext_resource type="PackedScene" uid="uid://calalwud0205g" path="res://scenes/Game/Entities/player_module.tscn" id="6_5eqfn"]
@@ -2352,10 +2352,10 @@ _data = {
 position = Vector2(640, 320)
 collision_mask = 0
 script = ExtResource("1_tuyoq")
-DeathNode = NodePath("EnemyDeath")
+DeathNode = NodePath("PlayerDeath")
 
-[node name="EnemyDeath" type="Node" parent="." unique_id=488736503]
-script = ExtResource("2_jpqlp")
+[node name="PlayerDeath" type="Node" parent="." unique_id=488736503]
+script = ExtResource("2_b6d4j")
 
 [node name="P1Moveset" type="Node" parent="." unique_id=1424738163]
 script = ExtResource("8_53s13")

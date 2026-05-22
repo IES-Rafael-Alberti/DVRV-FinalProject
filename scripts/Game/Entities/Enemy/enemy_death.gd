@@ -4,6 +4,7 @@ extends Node
 @export var despawnTime: float = 0
 @export var deathAnim: StringName = "Knockback"
 
+
 func onDeath(this: CharacterBody2D):
 	var playerModule = this.PlayerModule
 
@@ -11,6 +12,9 @@ func onDeath(this: CharacterBody2D):
 	playerModule.StatusModule.applyStun(10000)
 	playerModule.AnimModule.forceAnim(deathAnim)
 	await get_tree().create_timer(deathTime).timeout
+	
+	LootManager.try_drop(this.global_position) #el manager decide si toca o no
+	
 	despawnAnim(this)
 	await get_tree().create_timer(despawnTime).timeout
 	this.queue_free()
@@ -21,3 +25,4 @@ func despawnAnim(this: CharacterBody2D):
 		playerModule.AnimModule.forceAnim("Knockback")
 		await get_tree().create_timer(0.3).timeout
 		this.visible = !this.visible
+		

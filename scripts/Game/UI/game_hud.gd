@@ -1,7 +1,7 @@
 extends Node
 
-@onready var settings_node: Control = get_parent().get_node("SettingsLayer/Settings")
-@onready var pausa_node: CanvasLayer = get_parent().get_node("Pausa")
+@onready var settings_node: Control = $SettingsLayer/Settings
+@onready var pausa_node: CanvasLayer = $Pausa
  
  
 func _on_settings_button_pressed():

@@ -25,49 +25,63 @@ func wave1():
 	setCameraFollow(false)
 	for i in range(0,2):
 		EnemiesNode.spawnEnemy("Grimp")
+		if not is_inside_tree(): return
 		await get_tree().create_timer(0.5).timeout
 	await waitUntilEnemyClear()
+	if not is_inside_tree(): return
 	finishWave()
 
 func wave2():
 	setCameraFollow(false)
 	for i in range(0,6):
 		EnemiesNode.spawnEnemy("Grimp")
+		if not is_inside_tree(): return
 		await get_tree().create_timer(randf_range(0.2,1.5)).timeout
 	await waitUntilEnemyClear()
+	if not is_inside_tree(): return
 	finishWave()
 
 func wave3():
 	setCameraFollow(false)
 	EnemiesNode.spawnEnemy("Pumpumf")
 	await waitUntilEnemyClear()
+	if not is_inside_tree(): return
 	finishWave()
 	
 func wave4():
 	setCameraFollow(false)
 	EnemiesNode.spawnEnemy("Pumpumf")
+	if not is_inside_tree(): return
 	await get_tree().create_timer(0.5).timeout
+	if not is_inside_tree(): return
 	EnemiesNode.spawnEnemy("Pumpumf")
 	for i in range(0,6):
 		EnemiesNode.spawnEnemy("Grimp", false)
+		if not is_inside_tree(): return
 		await get_tree().create_timer(randf_range(0.2,0.7)).timeout
 	await waitUntilEnemyClear()
+	if not is_inside_tree(): return
 	finishWave()
 	
 func wave5():
 	setCameraFollow(false)
 	EnemiesNode.spawnEnemy("Flyby")
 	await waitUntilEnemyClear()
+	if not is_inside_tree(): return
 	await get_tree().create_timer(1.0).timeout
+	if not is_inside_tree(): return
 	
 	for i in range(0,2):
 		EnemiesNode.spawnEnemy("Pumpumf")
+		if not is_inside_tree(): return
 		await get_tree().create_timer(randf_range(0.2,0.7)).timeout
+	if not is_inside_tree(): return
 	EnemiesNode.spawnEnemy("Flyby", false)
 	for i in range(0,2):
 		EnemiesNode.spawnEnemy("Grimp", false)
 	EnemiesNode.spawnEnemy("Flyby")
 	await waitUntilEnemyClear()
+	if not is_inside_tree(): return
 	finishWave()
 	
 func wave6():
@@ -82,6 +96,7 @@ func wave6():
 				EnemiesNode.spawnEnemy("Pumpumf")
 			3:
 				EnemiesNode.spawnEnemy("Spiffer")
+		if not is_inside_tree(): return
 		await get_tree().create_timer(2).timeout
 	pass
 	
@@ -95,8 +110,11 @@ func setCameraFollow(follow: bool):
 func waitUntilEnemyClear():
 	var enemies = EnemiesNode.spawnedEnemies
 	while not EnemiesNode.spawnedEnemies.is_empty():
+		if not is_inside_tree(): return
 		await get_tree().process_frame
 
 func finishWave():
+	if not is_inside_tree(): return
 	await get_tree().create_timer(waveCompletedEndlag).timeout
+	if not is_inside_tree(): return
 	setCameraFollow(true)

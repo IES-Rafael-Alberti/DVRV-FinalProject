@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2iu8c3jndwy4"
-path="res://.godot/imported/Sound-One.svg-51c48351e2458681971a63d580cabccf.ctex"
+uid="uid://b02i0tkxvedx"
+path="res://.godot/imported/Repeat-Right-40px.svg-638d8b24dbfbd845b6cfe56b2aa860c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Sound-One.svg"
-dest_files=["res://.godot/imported/Sound-One.svg-51c48351e2458681971a63d580cabccf.ctex"]
+source_file="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right-40px.svg"
+dest_files=["res://.godot/imported/Repeat-Right-40px.svg-638d8b24dbfbd845b6cfe56b2aa860c8.ctex"]
 
 [params]
 

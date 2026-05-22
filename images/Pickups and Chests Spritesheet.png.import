@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2iu8c3jndwy4"
-path="res://.godot/imported/Sound-One.svg-51c48351e2458681971a63d580cabccf.ctex"
+uid="uid://cfyatdwoefw45"
+path="res://.godot/imported/Pickups and Chests Spritesheet.png-7646b728cc6078fda763fc49deff9cfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Sound-One.svg"
-dest_files=["res://.godot/imported/Sound-One.svg-51c48351e2458681971a63d580cabccf.ctex"]
+source_file="res://images/Pickups and Chests Spritesheet.png"
+dest_files=["res://.godot/imported/Pickups and Chests Spritesheet.png-7646b728cc6078fda763fc49deff9cfc.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

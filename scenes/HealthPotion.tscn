@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cux1i5na0rb2s"]
+
+[ext_resource type="Script" uid="uid://bgj4u27sbh3wb" path="res://scripts/Game/Pickups/health_potion.gd" id="1_np0hw"]
+[ext_resource type="Texture2D" uid="uid://cfyatdwoefw45" path="res://images/Pickups and Chests Spritesheet.png" id="2_gan2x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nwoc"]
+radius = 56.008926
+
+[node name="HealthPotion" type="Area2D" unique_id=1530723153]
+collision_layer = 16
+script = ExtResource("1_np0hw")
+
+[node name="Potion" type="Sprite2D" parent="." unique_id=1445706392]
+texture = ExtResource("2_gan2x")
+region_enabled = true
+region_rect = Rect2(101.659546, 517.2367, 104.00845, 134.48535)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=719056098]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_1nwoc")

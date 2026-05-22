@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dprhj58a0gbm2"]
 
 [ext_resource type="Texture2D" uid="uid://d1mlbgplycn15" path="res://images/UI/Progress Barr.png" id="1_dj8aq"]
+[ext_resource type="Script" uid="uid://spepxxdgiqyg" path="res://scripts/Game/UI/game_hud.gd" id="2_hud"]
+[ext_resource type="PackedScene" uid="uid://bg4staso4o4oe" path="res://scenes/pausa.tscn" id="3_pausa"]
+[ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="4_settings"]
+[ext_resource type="PackedScene" uid="uid://b7yas1aje0y4q" path="res://scenes/game_over.tscn" id="5_4aj63"]
 
 [node name="Ui" type="Control" unique_id=1782285889]
 z_index = 10
@@ -10,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_hud")
 
 [node name="PlayersGUI" type="HBoxContainer" parent="." unique_id=306253373]
 layout_mode = 0
@@ -43,3 +48,14 @@ texture_under = ExtResource("1_dj8aq")
 texture_progress = ExtResource("1_dj8aq")
 tint_under = Color(0.4852317, 0.059644576, 0.059644576, 1)
 tint_progress = Color(0, 1, 0, 1)
+
+[node name="Pausa" parent="." unique_id=1166857014 instance=ExtResource("3_pausa")]
+
+[node name="SettingsLayer" type="CanvasLayer" parent="." unique_id=1043052215]
+process_mode = 3
+layer = 110
+
+[node name="Settings" parent="SettingsLayer" unique_id=2034388717 instance=ExtResource("4_settings")]
+visible = false
+
+[node name="GameOver" parent="." unique_id=1451820411 instance=ExtResource("5_4aj63")]

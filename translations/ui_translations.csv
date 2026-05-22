@@ -18,7 +18,6 @@ ui_quit_alert,Se perderá el progreso,All progress will be lost
 ui_yes,Sí,Yes
 ui_no,No,No
 ui_next,Siguiente,Next
-ui_credits,Créditos,Credits
 ui_production,Producción,Production
 ui_design,Diseño,Design
 ui_programming,Programación,Programming
@@ -26,6 +25,31 @@ ui_art,Arte,Art
 ui_audio,Audio,Audio
 ui_back,Atras,Back
 ui_exit,Salir,Exit
+ui_controls,Controles,Controle
+ui_movement,Movimiento,Movement
+ui_up,Arriba,Up
+ui_right,Derecha,right
+ui_down,Abajo,Down
+ui_left,Izquierda,Left
+ui_attacks,Ataques,Attacks
+ui_lightAttack,Golpe ligero,Light attack
+ui_strongAttack,Golpe fuerte,Strong attack
+ui_jump,Salto,Jump
+ui_special,Especial,Special
+ui_masterVolumen,Volumen Maestro,Master Volume      
+ui_music,Música,Music
+ui_sfx,SFX,SFX
+ui_credits,Créditos,Credits
+ui_production,Producción,Production
+ui_programming,Programación,Programming
+ui_narrative,Narrativa,Narrative
+ui_designArt,Diseño & Arte,Design & Art
+ui_musicSFX,Música & SFX,Music & SFX
+ui_SThanks,Agradecimientos,Special Thanks
+ui_game_over,Has Caído,Game Over
+ui_idioma,Elige tu idioma →,Choose your language →
+ui_godot,Hecho en Godot 4 · ©,Made with Godot 4 · © 
+ui_defeat_msg,Las setas han caído...,The mushrooms have fallen...
 cutscene_1,"Este mundo es un lugar muy vasto, desde tiempos inmemoriales no había manera de descifrar cómo de entre toda esta barbarie y descontrol de alguna manera todo se equilibraba de vuelta y hacía de nuestro mundo un lugar habitable.\n\nLos elementos, fuerzas más allá de nuestra comprensión que fueron los vestigios que nuestros dioses dejaron atrás en aquella época donde el planeta empezó a brotar sus primeras señales de vida, una infinidad en el pasado.\n\nEsta fuerza de los elementos fue lo que permitió dar inicio a la vida, la voluntad de aquellas entidades que ya no están con nosotros, dejándonos a nuestra voluntad de cuidar de este mundo y evolucionar junto a él.\n\nPero ahora que no hay nadie que vigile el desarrollo de todas las criaturas, cada día brotan más 'anomalías' que no somos capaces de explicar, las hemos denominado por un nuevo elemento: 'CAOS'.","Within this vast world, there has never been a way to understand how it is that among all this madness and havoc there seemed to be a balance that put everything together and somehow made these lands a liveable place.\n\nThe elements, concepts beyond our comprehension that are but vestiges left behind by our gods an infinity ago, back when the planet was but only starting to bloom its very first signs of life.\n\nThese elements are what allowed life itself to grow and prosper, the will of those beings that are no longer with us, leaving us to our own devices to care for this world and evolve along with it.\n\nBut now that there's nobody to watch over our growth, each day new 'anomalies' which we are unable to explain are discovered, we believe this is due to a new unknown and dangerous element: 'CHAOS'."
 cutscene_2,"De entre todas estas anomalías, una destaca como la más temible; el Señor Oscuro, una entidad de un poder inimaginable sobre la oscuridad y lo desconocido.\n\nUn día apareció de la nada junto con su temible palacio, estableciendo su territorio y sembrando el terror con su mera presencia, tanta fue que ninguna criatura se atrevió a plantarle cara durante años.\n\nNadie ha visto al Señor Oscuro en persona, se rumorea que carga con una enorme armadura que esconde su verdadero rostro, pero nadie que haya ido a enfrentarlo ha sido capaz de volver como para contarlo.\n\nSin embargo… Recientemente, un acontecimiento de lo más chocante ha cambiado las tornas en esta historia.\n\nUn rumor, en el que se cuenta de que aquel que logre acabar con la vida del Señor Oscuro recibirá no solo todo su poder, sino que también un deseo con el que podrán hacer realidad lo que su alma quisiera.","Among all of these anomalies, one sticks out as the most fearsome; the Dark Lord, an entity with an unimaginable amount of power over darkness and the unknown.\n\nHe appeared one day out of nowhere alongside his palace, claiming his domain and spreading fear with his mere presence, so much so that nobody dared to face him for years.\n\nNobody has seen the Dark Lord in person, it is said that he wears a massive armor that hides his true face, but nobody that has faced him has been able to come back to tell the tale.\n\nHowever… Recently, a most shocking event has changed this story as we know it.\n\nA rumor, in which it is said that whoever is capable of ending his life will not only gain his powers, but also a wish with which they'll be able to make whatever their soul wishes come true."
 cutscene_3,"Estas palabras se esparcieron como pólvora a lo largo y ancho del mundo, llegando a tal punto que lo impensable sucedió: le pusieron precio a la cabeza del Señor Oscuro, la más alta jamás vista.\n\nUn deseo, poder, riqueza, todo por acabar con la vida del ser más poderoso del mundo.\n\nMuchos creyeron que no era más que un bulo, pero incluso así, muchas personas pusieron rumbo hacia su palacio para darle caza, pero por ahora nadie ha sido capaz de vencerle, y muchos menos siquiera pudieron llegar a las puertas del palacio.","These words were spread all over the world, to the point that something unbelievable happened: a bounty was put on the Dark Lord's head, the largest sum of treasures ever seen.\n\nA wish, power, riches, all for whoever is able to kill the most powerful being in the world.\n\nMany believed this to be no more than a hoax, but even so, many people marched on to the Dark Lord's palace to hunt him down, yet nobody has been able to defeat him to this day, and many more couldn't even make it to his palace gates."

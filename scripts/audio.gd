@@ -37,7 +37,7 @@ func _init_audio_buses() -> void:
 		audio_buses[bus_name] = i
 
 		# Try to find the bus container node
-		var bus_container = get_node_or_null("MarginContainer/VBoxContainer/" + bus_name + "Bus")
+		var bus_container = get_node_or_null("PageSound/" + bus_name + "Bus")
 		if bus_container == null:
 			continue
 
@@ -55,6 +55,7 @@ func _init_audio_buses() -> void:
 			"mute_button": mute_button,
 			"minus_button": minus_button,
 			"plus_button": plus_button,
+			"volume_label": _find_volume_label(bus_container),
 		}
 
 		volume_slider.value_changed.connect(Callable(self , "_on_volume_changed").bind(bus_name))
@@ -78,14 +79,30 @@ func _init_audio_buses() -> void:
 		AudioServer.set_bus_mute(audio_buses[bus_name], saved_muted)
 		audio_controls[bus_name]["volume_slider"].value = saved_volume
 		audio_controls[bus_name]["mute_button"].button_pressed = saved_muted
+		_update_volume_label(bus_name, saved_volume)
 
 		# If muted, save the volume and set slider to 0
 		if saved_muted:
 			muted_volumes[bus_name] = saved_volume
 			audio_controls[bus_name]["volume_slider"].value = 0
+			_update_volume_label(bus_name, 0.0)
 
 		# Update the mute button icon
 		_update_mute_button_icon(bus_name)
+
+
+func _find_volume_label(bus_container: Node) -> Label:
+	for child in bus_container.get_children():
+		if child is Label and child.name.begins_with("Volume"):
+			return child
+	return null
+
+
+func _update_volume_label(bus_name: String, value: float) -> void:
+	if bus_name in audio_controls:
+		var label = audio_controls[bus_name]["volume_label"]
+		if label:
+			label.text = str(int(value))
 
 
 func _update_mute_button_icon(bus_name: String) -> void:
@@ -121,6 +138,7 @@ func _on_volume_changed(value: float, bus_name: String) -> void:
 	if bus_name in muted_volumes and value != 0:
 		muted_volumes[bus_name] = value
 
+	_update_volume_label(bus_name, value)
 	_update_mute_button_icon(bus_name)
 
 
@@ -138,11 +156,13 @@ func _on_mute_toggled(toggled_on: bool, bus_name: String) -> void:
 	if toggled_on:
 		muted_volumes[bus_name] = slider.value
 		slider.value = 0.0
+		_update_volume_label(bus_name, 0.0)
 		await get_tree().process_frame
 		AudioServer.set_bus_volume_db(bus_index, MIN_DECI)
 	else:
 		if bus_name in muted_volumes:
 			slider.value = muted_volumes[bus_name]
+			_update_volume_label(bus_name, muted_volumes[bus_name])
 			await get_tree().process_frame
 			var deci = slider_to_deci(muted_volumes[bus_name])
 			AudioServer.set_bus_volume_db(bus_index, deci)
@@ -159,12 +179,14 @@ func _on_mute_toggled(toggled_on: bool, bus_name: String) -> void:
 
 
 func _on_minus_pressed(bus_name: String) -> void:
+	AudioManager.play_sfx("btn")
 	if bus_name in audio_controls:
 		var slider = audio_controls[bus_name]["volume_slider"]
 		slider.value -= 10
 
 
 func _on_plus_pressed(bus_name: String) -> void:
+	AudioManager.play_sfx("btn")
 	if bus_name in audio_controls:
 		var slider = audio_controls[bus_name]["volume_slider"]
 		slider.value += 10
@@ -199,6 +221,7 @@ func _on_reset_button_pressed() -> void:
 			var mute_button = audio_controls[bus_name]["mute_button"]
 			slider.value = 50.0
 			mute_button.button_pressed = false
+			_update_volume_label(bus_name, 50.0)
 
 		get_node("/root/ConfigManager").set_setting("audio", bus_name + "_volume", 50.0)
 		get_node("/root/ConfigManager").set_setting("audio", bus_name + "_muted", false)

@@ -1,0 +1,351 @@
+[gd_scene format=3 uid="uid://0xnoy8wkvuql"]
+
+[ext_resource type="Script" uid="uid://c2ayeug5h2qxe" path="res://scripts/Game/Hitbox/hitbox.gd" id="1_ieem6"]
+[ext_resource type="Script" uid="uid://cetqui21umd2g" path="res://scripts/Game/Hitbox/lifetime_module.gd" id="2_to0ap"]
+[ext_resource type="Script" uid="uid://cepmk55uduy27" path="res://scripts/Game/Hitbox/hitbox_module.gd" id="3_2phw3"]
+[ext_resource type="Script" uid="uid://bghoagk1dci3i" path="res://scripts/Game/Hitbox/hitbox_movement_module.gd" id="4_j7bx6"]
+[ext_resource type="Script" uid="uid://i1vjniystpd" path="res://scenes/Game/Entities/Projectiles/proyectileAnim.gd" id="5_25cl8"]
+[ext_resource type="Texture2D" uid="uid://bwf0hdksn75fq" path="res://images/Circle.png" id="6_6m52o"]
+[ext_resource type="Script" uid="uid://c378j886clqog" path="res://scripts/Game/Hitbox/imaginary_hitbox_shower.gd" id="7_ts7vr"]
+[ext_resource type="Texture2D" uid="uid://4gno20qk755b" path="res://images/Entities/Others/Projectiles Spritesheet.png" id="8_0w58t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vdsg"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_0vtik"]
+resource_name = "ActiveLeft"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 0,
+"values": [Rect2(72, 88, 160, 88), Rect2(240, 88, 160, 88), Rect2(408, 88, 152, 88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(11, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(0.4, 0.407)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1uwu8"]
+resource_name = "ActiveRight"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 0,
+"values": [Rect2(72, 88, 160, 88), Rect2(240, 88, 160, 88), Rect2(408, 88, 152, 88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(-11, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [Vector2(0.4, 0.407)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5kfod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(72, 88, 160, 88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5400844, 0.5496183)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3lu7g"]
+_data = {
+&"ActiveLeft": SubResource("Animation_0vtik"),
+&"ActiveRight": SubResource("Animation_1uwu8"),
+&"RESET": SubResource("Animation_5kfod")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mn7rb"]
+animation = &"ActiveLeft"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3lu7g"]
+animation = &"ActiveRight"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_6p2w4"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_mn7rb")
+blend_point_0/pos = -0.1
+blend_point_1/node = SubResource("AnimationNodeAnimation_3lu7g")
+blend_point_1/pos = 0.1
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u1dlo"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bgl7a"]
+states/Active/node = SubResource("AnimationNodeBlendSpace1D_6p2w4")
+states/Active/position = Vector2(384, 100)
+transitions = ["Start", "Active", SubResource("AnimationNodeStateMachineTransition_u1dlo")]
+graph_offset = Vector2(-19, 18)
+
+[node name="Hitbox" type="Area2D" unique_id=2127241327 node_paths=PackedStringArray("HitboxModule", "HitboxMovementModule", "LifetimeModule", "ProyectileAnim", "ImaginaryHitbox", "Visual")]
+top_level = true
+position = Vector2(640, 320)
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_ieem6")
+HitboxModule = NodePath("HitboxModule")
+HitboxMovementModule = NodePath("HitboxMovementModule")
+LifetimeModule = NodePath("LifetimeModule")
+ProyectileAnim = NodePath("ProyectileAnim")
+ImaginaryHitbox = NodePath("ImaginaryHitboxShower")
+Visual = NodePath("Visual")
+damage = 5
+stuntime = 1.0
+knockback = Vector3(-100, 20, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=643838555]
+shape = SubResource("CircleShape2D_0vdsg")
+debug_color = Color(1, 0, 0.016666412, 0.41960785)
+
+[node name="LifetimeModule" type="Node" parent="." unique_id=1621094472 node_paths=PackedStringArray("node")]
+script = ExtResource("2_to0ap")
+node = NodePath("..")
+
+[node name="HitboxModule" type="Node" parent="." unique_id=523251351 node_paths=PackedStringArray("this")]
+script = ExtResource("3_2phw3")
+this = NodePath("..")
+damage = 5
+stuntime = 1.0
+knockback = Vector3(0, -5, 0)
+
+[node name="HitboxMovementModule" type="Node" parent="." unique_id=791949913]
+script = ExtResource("4_j7bx6")
+intMovementDir = Vector3(10, 0, 0)
+
+[node name="ProyectileAnim" type="Node" parent="." unique_id=1438850320 node_paths=PackedStringArray("Hitbox", "animTree")]
+script = ExtResource("5_25cl8")
+Hitbox = NodePath("..")
+animTree = NodePath("../Visual/AnimationTree")
+
+[node name="HitboxSprite" type="Sprite2D" parent="." unique_id=551758244]
+visible = false
+modulate = Color(0.86, 0, 0, 0.37254903)
+z_index = 20
+position = Vector2(5.4240227e-06, 9.23872e-06)
+scale = Vector2(0.032000046, 0.032000046)
+texture = ExtResource("6_6m52o")
+
+[node name="ImaginaryHitboxShower" type="Node2D" parent="." unique_id=482969845]
+script = ExtResource("7_ts7vr")
+
+[node name="ImaginaryHitbox" type="Sprite2D" parent="ImaginaryHitboxShower" unique_id=1182894614]
+modulate = Color(0, 0.43588275, 0.8942805, 0.37254903)
+z_index = 20
+position = Vector2(-1.4424324e-05, -3.2186508e-06)
+scale = Vector2(0.03199998, 0.031999998)
+texture = ExtResource("6_6m52o")
+
+[node name="Visual" type="Node2D" parent="." unique_id=48868218]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=363872972]
+position = Vector2(-16, 0)
+scale = Vector2(0.5400844, 0.5496183)
+texture = ExtResource("8_0w58t")
+region_enabled = true
+region_rect = Rect2(72, 88, 160, 88)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=344131334]
+libraries/ = SubResource("AnimationLibrary_3lu7g")
+
+[node name="AnimationTree" type="AnimationTree" parent="Visual" unique_id=1652933710]
+tree_root = SubResource("AnimationNodeStateMachine_bgl7a")
+advance_expression_base_node = NodePath("../AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Active/blend_position = 0.0
+
+[connection signal="initialized" from="." to="LifetimeModule" method="_on_initialized"]
+[connection signal="initialized" from="." to="HitboxMovementModule" method="_on_initialized"]
+[connection signal="initialized" from="." to="ImaginaryHitboxShower" method="_on_initialized"]
