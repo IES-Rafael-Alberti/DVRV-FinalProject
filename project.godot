@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://67417mfeefcj"
 ConfigManager="*uid://cxoh50kfg1s2t"
 MusicManager="*uid://bkhxoi8rpk7dt"
 AudioManager="*uid://tv0o6fikypq8"
+LootManager="*uid://bmv78fx3gno0v"
 
 [display]
 

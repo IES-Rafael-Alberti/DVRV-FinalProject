@@ -133,20 +133,6 @@ theme_override_constants/h_separation = 28
 theme_override_constants/v_separation = 14
 columns = 2
 
-[node name="CellDir" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=521289972]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 2
-
-[node name="RolDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=1635301868]
-layout_mode = 2
-text = "ui_production"
-uppercase = true
-
-[node name="NameDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=246556369]
-layout_mode = 2
-text = "Lola"
-
 [node name="CellArt" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=1283086198]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -185,6 +171,20 @@ text = "David"
 layout_mode = 2
 text = "Santi"
 
+[node name="CellDir" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=521289972]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="RolDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=1635301868]
+layout_mode = 2
+text = "ui_production"
+uppercase = true
+
+[node name="NameDir" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellDir" unique_id=246556369]
+layout_mode = 2
+text = "Lola"
+
 [node name="CellMusic" type="VBoxContainer" parent="Center/CreditsPanel/VB/BodyPanel/Grid" unique_id=660022235]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -222,9 +222,10 @@ text = "ui_SThanks"
 
 [node name="NameThanks1" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=1163877194]
 layout_mode = 2
-text = "añadir nombre"
+text = "Paula"
 
 [node name="NameThanks2" type="Label" parent="Center/CreditsPanel/VB/BodyPanel/Grid/CellThanks" unique_id=94946302]
+visible = false
 layout_mode = 2
 text = "añadir nombre"
 
@@ -239,7 +240,7 @@ theme_override_constants/separation = 12
 [node name="CreditCopyright" type="Label" parent="Center/CreditsPanel/VB/Footer" unique_id=1117224844]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Hecho en Godot 4 · © "
+text = "ui_godot"
 
 [node name="ButtonCreditExit" type="Button" parent="Center/CreditsPanel/VB/Footer" unique_id=1218704480]
 custom_minimum_size = Vector2(120, 46)

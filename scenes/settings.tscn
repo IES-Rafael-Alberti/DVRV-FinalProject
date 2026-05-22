@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chrtfvap6kx8k" path="res://images/menu/icon-mas.png" id="6_am25x"]
 [ext_resource type="Texture2D" uid="uid://c88o2mmw4g77k" path="res://images/menu/icon-menos.png" id="7_4ppmf"]
 [ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
-[ext_resource type="Script" path="res://scripts/controls.gd" id="8_ctrl"]
+[ext_resource type="Script" uid="uid://dc61ace5s22re" path="res://scripts/controls.gd" id="8_ctrl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oe2nd"]
 content_margin_left = 0.0
@@ -454,7 +454,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nilcw")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nilcw")
 tab_alignment = 1
-current_tab = 2
+current_tab = 1
 
 [node name="ui_audio" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=1573890620]
 visible = false
@@ -645,7 +645,6 @@ text = "ui_reset"
 icon = ExtResource("4_gjs24")
 
 [node name="ui_language" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=40930744]
-visible = false
 layout_mode = 2
 script = ExtResource("3_f4mfi")
 metadata/_tab_index = 1
@@ -658,7 +657,7 @@ theme_override_constants/separation = 14
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-text = "Elige tu idioma →"
+text = "ui_idioma"
 
 [node name="LangES" type="Button" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer/ui_language/PageLang" unique_id=1407614486]
 custom_minimum_size = Vector2(0, 54)
@@ -683,6 +682,7 @@ text = "INGLÉS                                                                 
 alignment = 0
 
 [node name="ui_controls" type="MarginContainer" parent="SettingsCenter/SettingsPanel/MainVB/BodyMargin/TabContainer" unique_id=609031219]
+visible = false
 layout_mode = 2
 script = ExtResource("8_ctrl")
 metadata/_tab_index = 2

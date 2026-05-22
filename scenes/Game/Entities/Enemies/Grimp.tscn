@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://x6oifdqj03x5" path="res://scripts/Game/Entities/Enemy/enemy_death.gd" id="2_00ayx"]
 [ext_resource type="Script" uid="uid://b7vqkwge0uusc" path="res://scripts/Game/Entities/Enemy/Grimp/grimp_Moveset.gd" id="2_fy6og"]
 [ext_resource type="PackedScene" uid="uid://pyc48swcdrki" path="res://scenes/Game/Attacks/hitbox.tscn" id="3_a0lmu"]
+[ext_resource type="PackedScene" uid="uid://cux1i5na0rb2s" path="res://scenes/HealthPotion.tscn" id="3_l2c38"]
 [ext_resource type="Script" uid="uid://873jsag3lu2i" path="res://scripts/Game/Entities/Enemy/Grimp/grimp_AI.gd" id="3_pn36o"]
 [ext_resource type="Script" uid="uid://c73wj7hcloodd" path="res://scripts/Game/Entities/moveset_utils.gd" id="5_ppu6s"]
 [ext_resource type="Script" uid="uid://bbuv1ki8p6lfi" path="res://scenes/Game/Entities/Enemies/EnemyDetector.gd" id="6_s4n51"]
@@ -1501,6 +1502,7 @@ AIModule = NodePath("AIModule")
 
 [node name="EnemyDeath" type="Node" parent="." unique_id=971704386]
 script = ExtResource("2_00ayx")
+loot_scene = ExtResource("3_l2c38")
 
 [node name="GrimpMoveset" type="Node" parent="." unique_id=716930840]
 script = ExtResource("2_fy6og")
